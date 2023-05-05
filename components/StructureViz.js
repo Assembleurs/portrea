@@ -4,30 +4,68 @@ import MenagesPauvres from './MenagesPauvres';
 import LogementsSociaux from './LogementsSociaux';
 import TypeMenage from './TypeMenage';
 import AgeBatiment from './AgeLogement';
+import Population from './Population';
+import styles from '../styles/styles.module.css';
 
 const StructuresViz = ({ structure }) => {
     return (
       <div>
         {structure ? (
           <>
-            <h2>Répartition par âges</h2>
-            <AgeBarChart structure={structure} />
-            <br></br>
-            <h2>Part des ménages pauvres</h2>
-            <MenagesPauvres structure={structure} />
-            <h2>Part des logements sociaux</h2>
-            <LogementsSociaux structure={structure} />
-            <h2>Structure des ménages</h2>
-            <TypeMenage structure={structure} />
-            <h2>Date de construction des logements</h2>
-            <AgeBatiment structure={structure} />
+            <div className={styles.section}>
+              <div className={styles.titleBox}>
+                <h2 className={styles.title}>POPULATION</h2>
+              </div>
+              <div className={styles.content}>
+                <Population structure={structure} />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <div className={styles.titleBox}>
+                <h2 className={styles.title}>RÉPARTITION PAR ÂGE</h2>
+              </div>
+              <div className={styles.content}>
+                <AgeBarChart structure={structure} />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <div className={styles.titleBox}>
+                <h2 className={styles.title}>PART DES MÉNAGES PAUVRES</h2>
+              </div>
+              <div className={styles.content}>
+                <MenagesPauvres structure={structure} />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <div className={styles.titleBox}>
+                <h2 className={styles.title}>PART DES LOGEMENTS SOCIAUX</h2>
+              </div>
+              <div className={styles.content}>
+                <LogementsSociaux structure={structure} />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <div className={styles.titleBox}>
+                <h2 className={styles.title}>STRUCTURE DES MÉNAGES</h2>
+              </div>
+              <div className={styles.content}>
+                <TypeMenage structure={structure} />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <div className={styles.titleBox}>
+                <h2 className={styles.title}>DATE DE CONSTRUCTION DES LOGEMENTS</h2>
+              </div>
+              <div className={styles.content}>
+                <AgeBatiment structure={structure} />
+              </div>
+            </div>
           </>
         ) : (
           <p>Veuillez sélectionner une structure de médiation pour afficher les visualisations.</p>
         )}
       </div>
     );
-  };
-  
-  export default StructuresViz;
-  
+};
+
+export default StructuresViz;
