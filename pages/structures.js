@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import StructureDetails from '../components/StructureDetails';
 import data from '../data/structures_mediation_insee_agg.geojson';
-import styles from '../styles/styles.module.css'; // Ajoutez cette ligne
+import styles from '../styles/styles.module.css';
 
 const IndexPage = () => {
   const [structures, setStructures] = useState(data.features);
