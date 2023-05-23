@@ -5,7 +5,7 @@ export default async (req, res) => {
     const { id } = req.query;
 
     // Call the existing API
-    const response = await fetch(`http://localhost:3000/api/locationmatch?id=${id}`);
+    const response = await fetch(`https://portrea-js.vercel.app/api/locationmatch?id=${id}`);
     const data = await response.json();
 
     // Extract the specified fields from each object
