@@ -10,35 +10,19 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.searchBar {
-  display: flex;
-  justify-content: center;
-  margin: 30px 0;
-}
-
-.searchBar input {
-  width: 50%; /* ajuster selon vos préférences */
-  height: 40px; /* ajuster selon vos préférences */
-  padding: 0 10px;
-  font-size: 18px; /* ajuster selon vos préférences */
-}
-
 .searchButton {
-  margin-left: 10px;
-  height: 40px; /* même hauteur que le champ de saisie pour l'alignement */
-  background-color: rgb(37, 45, 128);
+  background-color:rgb(37, 45, 128) ;
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 0 10px;
+  padding-inline: 5px;
   cursor: pointer;
+  margin-left: 20px;
   font-family: 'Roboto', sans-serif;
 }
-
 .searchButton:hover {
   background-color: rgb(248 64 20);
 }
-
 
 .mapContainer {
   width: 100%;
@@ -116,12 +100,6 @@
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.infoBoxContainer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
 .infoTitle {
   font-weight: bold;
   font-size: 18px;
@@ -168,24 +146,4 @@
   background-color: #ffffff;
   padding: 20px;
   border-radius: 0 0 5px 5px;
-}
-
-.card {
-  border: 1px solid #ccc;
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.card:hover {
-  background-color: #eee; /* Change la couleur de fond lors du survol */
-  cursor: pointer; /* Change le curseur en forme de main pour indiquer la cliquabilité */
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-  padding: 20px;
 }

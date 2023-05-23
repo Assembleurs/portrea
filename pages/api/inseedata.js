@@ -32,11 +32,7 @@ export default async (req, res) => {
           log_av45: record.fields.log_av45 || 0,
           ind_inc: record.fields.ind_inc || 0,
           pop_carr: record.fields.pop_carr || 0,
-          ind_18_24: record.fields.ind_18_24 || 0,
-          men: record.fields.men || 0,
-          log_soc: record.fields.log_soc || 0,
-          men_1ind: record.fields.men_1ind || 0,
-          men_5ind: record.fields.men_5ind || 0,
+          ind_18_24: record.fields.ind_18_24 || 0
         };
       }
       return null;
