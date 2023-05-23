@@ -5,6 +5,7 @@ import LogementsSociaux from './LogementsSociaux';
 import TypeMenage from './TypeMenage';
 import AgeBatiment from './AgeLogement';
 import Population from './Population';
+import Ips from './Ips';
 import styles from '../styles/styles.module.css';
 
 const StructuresViz = ({ structure }) => {
@@ -18,6 +19,14 @@ const StructuresViz = ({ structure }) => {
               </div>
               <div className={styles.content}>
                 <Population structure={structure} />
+              </div>
+            </div>
+            <div className={styles.section}>
+              <div className={styles.titleBox}>
+                <h2 className={styles.title}>ECOLES</h2>
+              </div>
+              <div className={styles.content}>
+                <Ips structure={structure} />
               </div>
             </div>
             <div className={styles.section}>
