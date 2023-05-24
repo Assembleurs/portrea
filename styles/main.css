@@ -1,20 +1,4 @@
 @font-face {
-  font-family: 'Inter var';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: block;
-  src: url(/fonts/Inter-roman.latin.var.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'Inter var';
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: block;
-  src: url(/fonts/Inter-italic.latin.var.woff2) format('woff2');
-  font-named-instance: 'Italic';
-}
-
-@font-face {
   font-family: 'Big Shoulders Display';
   src: url('https://fonts.googleapis.com/css2?family=Alice&family=Antic+Slab&family=Arvo&family=Big+Shoulders+Display') format('truetype');
   font-weight: normal;
