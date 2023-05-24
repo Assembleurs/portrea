@@ -1,5 +1,7 @@
 import 'nextra-theme-blog/style.css'
 import Head from 'next/head'
+import 'leaflet/dist/leaflet.css';
+
 
 import '../styles/main.css'
 

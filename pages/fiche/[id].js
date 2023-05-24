@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import locationsData from '../../data/locations.geojson'; // Importer les données du fichier
+import Layout from '../../components/nav/Layout';
+import locationsData from '../../data/locations.geojson';
 import styles from '../../styles/IdPage.module.css';
 import Population from '../../components/viz/Population';
 import AgeBarChart from '../../components/viz/AgeBarChart';
@@ -35,7 +36,12 @@ const IdPage = ({ id }) => {
     window.open(`/search`, '_blank');
   };
 
+  const handleStats = () => {
+    window.open(`/codepostal/00000`, '_blank');
+  };
+
   return (
+    <Layout>
     <div className={styles.container}>
       <div className={styles.objectBox}>
         {objectData && (
@@ -44,12 +50,18 @@ const IdPage = ({ id }) => {
             <h2>{objectData.commune}</h2>
           </>
         )}
+      </div>
+      <div>
+        <br></br>
         <div className={styles.buttonContainer}>
           <button className={styles.returnButton} onClick={handleReturnToList}>
             Retour à la liste
           </button>
           <button className={styles.returnButton} onClick={handleCompare}>
-            Comparer
+            Comparer avec une autre structure
+          </button>
+          <button className={styles.returnButton} onClick={handleStats}>
+            Statistiques par commune
           </button>
         </div>
       </div>
@@ -74,6 +86,7 @@ const IdPage = ({ id }) => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

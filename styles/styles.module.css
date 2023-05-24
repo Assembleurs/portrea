@@ -17,15 +17,15 @@
 }
 
 .searchBar input {
-  width: 50%; /* ajuster selon vos préférences */
-  height: 40px; /* ajuster selon vos préférences */
+  width: 50%; 
+  height: 40px; 
   padding: 0 10px;
-  font-size: 18px; /* ajuster selon vos préférences */
+  font-size: 18px; 
 }
 
 .searchButton {
   margin-left: 10px;
-  height: 40px; /* même hauteur que le champ de saisie pour l'alignement */
+  height: 40px; 
   background-color: rgb(37, 45, 128);
   color: #fff;
   border: none;
@@ -140,7 +140,7 @@
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 10px;
-  font-family: 'Big Shoulders Display', cursive;
+  font-family: 'Big Shoulders Display';
   letter-spacing: 0em;
 }
 

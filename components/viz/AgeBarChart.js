@@ -37,7 +37,7 @@ const AgeBarChart = ({ id }) => {
       title="Répartition par âge"
       description="Visualisation de la répartition de la population par tranche d'âge"
       visualization={
-        <BarChart width={500} height={300} data={ageData}>
+        <BarChart width={500} height={400} data={ageData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="age" />
           <YAxis tickFormatter={(value) => `${value.toFixed(1)}%`} />

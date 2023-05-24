@@ -38,7 +38,7 @@ const TypeMenage = ({ id }) => {
       description="Visualisation de la répartition des types de ménages"
       visualization={
         <div>
-          <BarChart width={500} height={300} data={menageData}>
+          <BarChart width={500} height={400} data={menageData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis tickFormatter={(value) => `${value}%`} />
