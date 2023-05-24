@@ -40,7 +40,7 @@ const AgeLogement = ({ id }) => {
       description="Visualisation de la répartition des logements par période de construction"
       visualization={
         <div>
-          <BarChart width={500} height={300} data={ageData}>
+          <BarChart width={500} height={400} data={ageData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />

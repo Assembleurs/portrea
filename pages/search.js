@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Layout from '../components/nav/Layout';
 import SearchBar from '../components/nav/SearchBar';
 import Gallery from '../components/nav/Gallery';
 
@@ -16,9 +17,11 @@ export default function App() {
   }, []);  // le tableau vide en deuxième argument garantit que l'effet n'est déclenché qu'au montage du composant
 
   return (
+    <Layout>
     <div>
       <SearchBar onSearch={handleSearch} />
       <Gallery objects={objects} />
     </div>
+    </Layout>
   );
 }

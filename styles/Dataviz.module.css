@@ -5,7 +5,7 @@
   }
   
   .dataviz h2 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 8px;
   }
   
@@ -17,13 +17,18 @@
   
   .dataviz .visualization {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    min-height: 300px;
+    min-height: 400px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
+    overflow-y: auto;
+    max-height: 400px;
+    padding-top: 10px; /* Ajoutez cette ligne */
   }
+  
   
   .infoBox {
     background-color: #f7f7f7;

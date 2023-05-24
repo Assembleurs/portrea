@@ -1,0 +1,58 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002884;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .header h1 {
+    margin: 0;
+    padding: 0 20px;
+    font-size: 45px;
+    font-family: 'Big Shoulders Display';
+}
+  
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin-right: 20px;
+  }
+  
+  .nav a {
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    font-family: 'Big Shoulders Display';
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  
+  .nav a.active,
+  .nav a:hover {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .main {
+    flex-grow: 1;
+    padding: 20px 40px;
+    width: 100%; 
+    }
+  
