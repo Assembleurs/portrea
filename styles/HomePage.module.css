@@ -1,0 +1,64 @@
+/* HomePage.module.css */
+
+.home {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/images/hero.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    text-align: center;
+    color: #F3F4F6;
+  }
+  
+  .title {
+    font-size: 50px;
+    margin-bottom: 2rem;
+    font-family: 'Arial', sans-serif;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+    
+  .linkGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-radius: 10px;
+    color: #F3F4F6;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .link:hover {
+    transform: scale(1.05);
+  }
+  
+  .search {
+    background-color: rgba(8, 49, 113, 0.8); /* blue */
+  }
+  
+  .stats {
+    background-color: rgba(223, 51, 51, 0.8); /* gray */
+  }
+  

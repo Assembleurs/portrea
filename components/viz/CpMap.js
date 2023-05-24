@@ -68,7 +68,7 @@ const CpMap = ({ postalCode }) => {
       <strong>{item.properties.nom}</strong><br />
       {item.properties.adresse}<br />
       {item.properties.commune}<br />
-      <a href={`http://localhost:3000/fiche/${item.properties.id}`} target="_blank" rel="noopener noreferrer">Voir les données complètes</a>
+      <a href={`/fiche/${item.properties.id}`} target="_blank" rel="noopener noreferrer">Voir les données complètes</a>
     </Popup>
   </CircleMarker>
 ))}
