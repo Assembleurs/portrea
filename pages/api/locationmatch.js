@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const { id } = req.query;
 
   // load the local GeoJSON data
-  const data = JSON.parse(fs.readFileSync(path.resolve('/data/locations.geojson'), 'utf8'));
+  const data = JSON.parse(fs.readFileSync(path.resolve('./data/locations.geojson'), 'utf8'));
   const location = data.features.find(feature => feature.properties.id === id);
 
   if (!location) {
