@@ -4,9 +4,13 @@ export default async (req, res) => {
   try {
     const { id } = req.query;
 
-    // Call the existing API
-    const response = await fetch(`https://portrea-js.vercel.app/api/locationmatch?id=${id}`);
+    // Utiliser la variable d'environnement pour construire l'URL
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+    const response = await fetch(`${baseUrl}/api/locationmatch?id=${id}`);
+
+
     const data = await response.json();
+    console.log('Fetched data:', data);
 
     // Extract the specified fields from each object
     const extractedData = data.map(item => {
@@ -54,7 +58,7 @@ export default async (req, res) => {
 
     res.status(200).json(aggregatedData);
   } catch (err) {
-    console.error(err);
+    console.error('Caught error:', err);
     res.status(500).json({ error: 'An error occurred' });
   }
 };
