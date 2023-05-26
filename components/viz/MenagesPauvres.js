@@ -57,7 +57,7 @@ const MenagesPauvres = ({ id }) => {
       description="Part des ménages pauvres par rapport au nombre total de ménages"
       visualization={
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <h2 style={{ fontSize, color }}>{pauvrete}%</h2>
+          <h2 style={{ fontSize, color }}><br></br>{pauvrete}%</h2>
         </div>
       }
     />

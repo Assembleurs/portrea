@@ -58,7 +58,7 @@ export default function Population({ id }) {
       description="Nombre d'habitants dans le secteur"
       visualization={
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <h2 style={{ fontSize, color }}>{population}</h2>
+          <h2 style={{ fontSize, color }}><br></br>{population}</h2>
         </div>
       }
     />

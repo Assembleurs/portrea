@@ -1,0 +1,89 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+}
+
+.table td,
+.table th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.evenRow {
+  background-color: #f5f5f5;
+}
+
+.oddRow {
+  background-color: #fff;
+}
+
+.table td:first-child,
+.table th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.table td:last-child,
+.table th:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.table td {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.table th {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #444;
+  text-transform: uppercase;
+}
+
+.table td.numValue,
+.table th.numValue {
+  font-weight: bold;
+  text-align: right;
+}
+
+.table td.numValue:before,
+.table th.numValue:before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #555;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.table td.numValue.high:before,
+.table th.numValue.high:before {
+  background-color: #E36049;
+}
+
+.table td.numValue.medium:before,
+.table th.numValue.medium:before {
+  background-color: #F3B23F;
+}
+
+.table td.numValue.low:before,
+.table th.numValue.low:before {
+  background-color: #5C9FAB;
+}
+
+.table td.numValue span,
+.table th.numValue span {
+  margin-left: 4px;
+}
+

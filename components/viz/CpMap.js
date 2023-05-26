@@ -50,7 +50,7 @@ const CpMap = ({ postalCode }) => {
   return (
     <CompareDataviz
       title={`Localisation`}
-      description={`Voici une carte montrant la localisation des différentes structures pour le code postal ${postalCode}.`}
+      description={`Localisation des différentes structures pour le code postal ${postalCode}.`}
       visualization={
         <MapContainer center={center} zoom={13} style={{ height: "400px", width: "100%" }}>
           <TileLayer
