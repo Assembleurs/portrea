@@ -1,5 +1,4 @@
-import fs from 'fs';
-import path from 'path';
+import fetch from 'node-fetch';
 import { isPointInPolygon } from 'geolib';
 
 export default async (req, res) => {
@@ -15,9 +14,14 @@ export default async (req, res) => {
 
   const locationPoint = { latitude: parseFloat(lat), longitude: parseFloat(lon) };
 
-  const iris_caf = JSON.parse(fs.readFileSync(path.resolve('./data/iris-caf.geojson'), 'utf8'));
-  const iris_emploi = JSON.parse(fs.readFileSync(path.resolve('./data/iris-emploi.geojson'), 'utf8'));
-  const iris_pop = JSON.parse(fs.readFileSync(path.resolve('./data/iris-pop.geojson'), 'utf8')); // use iris-pop.geojson
+  const fetchGeoJson = async url => {
+    const response = await fetch(url);
+    return await response.json();
+  };
+
+  const iris_caf = await fetchGeoJson('https://raw.githubusercontent.com/etienne0101/portrea-js/main/data/iris-caf.geojson');
+  const iris_emploi = await fetchGeoJson('https://raw.githubusercontent.com/etienne0101/portrea-js/main/data/iris-emploi.geojson');
+  const iris_pop = await fetchGeoJson('https://raw.githubusercontent.com/etienne0101/portrea-js/main/data/iris-pop.geojson');
 
   const getData = (geojsonFile) => {
     return geojsonFile.features.find(feature => {
