@@ -1,5 +1,4 @@
-import fs from 'fs';
-import path from 'path';
+import fetch from 'node-fetch';
 import axios from 'axios';
 
 export default async (req, res) => {
@@ -13,7 +12,12 @@ export default async (req, res) => {
     return res.status(400).json({ error: 'Missing id query parameter' })
   }
 
-  const locations = JSON.parse(fs.readFileSync(path.resolve('./data/locations.geojson'), 'utf8'));
+  const fetchLocations = async () => {
+    const response = await fetch('https://raw.githubusercontent.com/etienne0101/portrea-js/main/data/locations.geojson');
+    return await response.json();
+  };
+
+  const locations = await fetchLocations();
 
   const locationData = locations.features.find(feature => feature.properties.id === id);
 
