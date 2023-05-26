@@ -62,7 +62,7 @@ const LogementsSociaux = ({ id }) => {
       visualization={
         <div style={{ textAlign: 'center' }}>
           <p style={{ fontSize, color }}>
-            {percentage.toFixed(1)}%
+          <br></br>{percentage.toFixed(1)}%
           </p>
         </div>
       }
