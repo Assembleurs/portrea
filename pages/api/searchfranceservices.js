@@ -3,7 +3,7 @@ import path from 'path';
 import Papa from 'papaparse';
 
 export default function handler(req, res) {
-  const csvFilePath = path.resolve('./data/liste-fs.csv');
+  const csvFilePath = path.resolve('./data/france-services/liste-fs.csv');
   const csvFileContent = fs.readFileSync(csvFilePath, 'utf8');
 
   Papa.parse(csvFileContent, {

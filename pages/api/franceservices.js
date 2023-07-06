@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
-  const dataPath1 = path.join(process.cwd(), 'data/fs1.json');
-  const dataPath2 = path.join(process.cwd(), 'data/fs2.json');
-  const dataPath3 = path.join(process.cwd(), 'data/fs3.json');
+  const dataPath1 = path.join(process.cwd(), 'data/france-services/fs1.json');
+  const dataPath2 = path.join(process.cwd(), 'data/france-services/fs2.json');
+  const dataPath3 = path.join(process.cwd(), 'data/france-services/fs3.json');
 
   const data1 = JSON.parse(fs.readFileSync(dataPath1, 'utf8'));
   const data2 = JSON.parse(fs.readFileSync(dataPath2, 'utf8'));
