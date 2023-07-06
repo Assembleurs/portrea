@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     apiData.records.sort((a, b) => a.distance - b.distance);
 
     // take the first 9 records
-    const nearestRecords = apiData.records.slice(0, 9);
+    const nearestRecords = apiData.records.slice(0, 30);
 
     res.status(200).json(nearestRecords);
   } catch (error) {
