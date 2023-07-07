@@ -25,10 +25,9 @@ const MapCaf = ({ code }) => {
 
   useEffect(() => {
     if (code) {
-      fetch('/api/iriscode?code=' + code) // Remplacez par le chemin correct vers votre API
+      fetch('/api/iriscode?code=' + code)
         .then((res) => res.json())
         .then((data) => {
-          // Filtrez les polygones en fonction du code
           const filteredData = data.features.filter(feature => feature.properties.codgeo.startsWith(code));
           setData({ ...data, features: filteredData });
         })
@@ -41,98 +40,97 @@ const MapCaf = ({ code }) => {
   useEffect(() => {
     if (map && data) {
       const bounds = L.latLngBounds();
-  
-      // Supprimer les anciens polygones de la carte
+
       map.eachLayer(layer => {
         if (layer instanceof L.Polygon) {
           map.removeLayer(layer);
         }
       });
-  
-      // Calcul de la valeur minimale et maximale
+
       const values = data.features.map(feature => feature.properties[selectedVariable]);
       const minValue = Math.min(...values);
       const maxValue = Math.max(...values);
-  
-      // Nouvelle échelle de couleurs pour les valeurs absolues
+
       const absoluteColorScale = chroma.scale(['yellow', 'violet']).domain([minValue, maxValue]);
-  
-      // Nouvelle échelle de couleurs pour les valeurs en pourcentage
-      const percentageColorScale = chroma.scale(['yellow', 'violet']).domain([0, 100]);
-  
-      data.features.forEach((feature) => {
- 
-        const { coordinates } = feature.geometry;
-        const { codgeo } = feature.properties;
 
-        // Inverser les coordonnées : [longitude, latitude] -> [latitude, longitude]
-        const invertedCoordinates = coordinates[0][0].map(([lon, lat]) => [lat, lon]);
-
-        const value = feature.properties[selectedVariable]; // Valeur de la variable sélectionnée
-
-        // Mode absolu
-        let color;
-        if (mode === 'absolute') {
-        color = absoluteColorScale(value).hex();
+      const percentageValues = data.features.map(feature => {
+        const value = feature.properties[selectedVariable];
+        const percValue = feature.properties['percou'];
+        if (percValue > 0) {
+          return (value / percValue) * 100;
+        } else {
+          return 0;
         }
-
-        // Mode pourcentage
-        if (mode === 'percentage') {
-        const percentage = ((value - minValue) / (maxValue - minValue)) * 100;
-        color = percentageColorScale(percentage).hex();
-        }
-
-        // Création du polygone avec la couleur appropriée
-        const polygon = L.polygon(invertedCoordinates, { fillColor: color, color: 'black', weight: 0.5 }).addTo(map)
-          .bindPopup(`${selectedVariable}: ${value}`);
-
-        // Ajouter les limites du polygone aux limites globales
-        bounds.extend(polygon.getBounds());
       });
+      const minPercentage = Math.min(...percentageValues);
+      const maxPercentage = Math.max(...percentageValues);
+      const percentageColorScale = chroma.scale(['yellow', 'violet']).domain([minPercentage, maxPercentage]);
 
-      // Ajuster la vue de la carte pour afficher les polygones
+      data.features.forEach((feature) => {
+        const { coordinates } = feature.geometry;
+        const invertedCoordinates = coordinates[0][0].map(([lon, lat]) => [lat, lon]);
+      
+        const value = feature.properties[selectedVariable];
+        const percValue = feature.properties['percou'];
+      
+        let color;
+        let popupContent;
+        if (mode === 'absolute') {
+          color = absoluteColorScale(value).hex();
+          popupContent = `${selectedVariable}: ${value}`;
+        }
+      
+        if (mode === 'percentage' && percValue > 0) {
+          const percentage = (value / percValue) * 100;
+          color = percentageColorScale(percentage).hex();
+          popupContent = `${selectedVariable}: ${value} (${percentage.toFixed(2)}%)`;
+        }
+      
+        const polygon = L.polygon(invertedCoordinates, { fillColor: color, color: 'black', weight: 0.5 }).addTo(map)
+          .bindPopup(popupContent);
+      
+        bounds.extend(polygon.getBounds());
+      });      
+
       if (bounds.isValid()) {
         map.fitBounds(bounds);
       }
     }
   }, [map, data, selectedVariable, mode]);
 
-  // Fonction pour gérer le changement de la variable sélectionnée
   const handleVariableChange = (event) => {
     setSelectedVariable(event.target.value);
   };
 
-  // Fonction pour gérer le changement du mode sélectionné
   const handleModeChange = (event) => {
     setMode(event.target.value);
   };
 
   return (
     <div>
-      <h1>Données socio-démographiques</h1>
-      <div id="map" style={{ height: '400px' }}></div>
+        <br></br>
       <select value={selectedVariable} onChange={handleVariableChange}>
-        <option value="a">a</option>
-        <option value="percou">percou</option>
-        <option value="ai">ai</option>
-        <option value="am">am</option>
-        <option value="acssenf">acssenf</option>
-        <option value="acavenf">acavenf</option>
-        <option value="ac3enf">ac3enf</option>
-        <option value="enf">enf</option>
-        <option value="enf_2">enf_2</option>
-        <option value="enf_3_5">enf_3_5</option>
-        <option value="enf_6_10">enf_6_10</option>
-        <option value="enf_11_14">enf_11_14</option>
-        <option value="enf_15_17">enf_15_17</option>
-        <option value="enf_18_24">enf_18_24</option>
-        <option value="a_etud">a_etud</option>
-        <option value="a_netud_24">a_netud_24</option>
-        <option value="aal">aal</option>
-        <option value="aapl">aapl</option>
-        <option value="aaah">aaah</option>
-        <option value="appa">appa</option>
-        <option value="arsas">arsas</option>
+        <option value="a">Nombre total d'allocataires</option>
+        <option value="percou">Personnes couvertes</option>
+        <option value="ai">Allocataires isolés sans enfant</option>
+        <option value="am">Allocataires mono-parent</option>
+        <option value="acssenf">Allocataires couples sans enfant</option>
+        <option value="acavenf">Allocataires couples avec enfant(s)</option>
+        <option value="ac3enf">Allocataires couples avec au moins 3 enfants à charge</option>
+        <option value="enf">Enfants couverts par au moins une prestation CAF</option>
+        <option value="enf_2">Enfants de moins de 3 ans</option>
+        <option value="enf_3_5">Enfants de 3 à moins de 6 ans</option>
+        <option value="enf_6_10">Enfants de 6 à moins de 11 ans</option>
+        <option value="enf_11_14">Enfants de 11 à moins de 15 ans</option>
+        <option value="enf_15_17">Enfants de 15 à moins de 18 ans</option>
+        <option value="enf_18_24">Enfants de 18 à moins de 25 ans</option>
+        <option value="a_etud">Allocataires étudiants</option>
+        <option value="a_netud_24">Allocataires de moins de 25 ans non étudiants</option>
+        <option value="aal">Allocataires percevant une aide au logement</option>
+        <option value="aapl">Allocataires percevant l’Aide Personnalisée au Logement</option>
+        <option value="aaah">Allocataires percevant l’Allocation Adulte Handicapé</option>
+        <option value="appa">Allocataires percevant la prime d'activité</option>
+        <option value="arsas">Allocataires percevant le RSA socle</option>
       </select>
       <label>
         Mode :
@@ -141,6 +139,8 @@ const MapCaf = ({ code }) => {
           <option value="percentage">Pourcentage</option>
         </select>
       </label>
+      <br></br>
+      <div id="map" style={{ height: '400px' }}></div>
     </div>
   );
 };
