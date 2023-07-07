@@ -76,3 +76,9 @@ img.next-image {
   color: #999;
   margin-top: 2rem;
 }
+
+.commune-title {
+  color: rgb(255, 255, 255);
+  font-size: 4em;
+  background-color: #2a2a2a;
+}

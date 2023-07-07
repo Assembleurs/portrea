@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-
-// Importez Leaflet CSS
 import 'leaflet/dist/leaflet.css';
 import MapCaf from '../../components/viz/Iris/MapCaf';
+import Layout from '../../components/Layout';
+import ComponentContainer from '../../components/nav/ComponentContainer';
+import MatchFs from '../../components/viz/FranceServices/MatchFs';
 
 
 const Territoire = () => {
@@ -25,16 +26,26 @@ const Territoire = () => {
   }, [code]);
 
   return (
+    <Layout>
     <div>
       {commune ? (
         <>
-          <h1>{commune.nom}</h1>
-          <MapCaf code={code} />
-        </>
+          <h1 className="commune-title">{commune.nom}</h1>
+          <h1>Données socio-démographiques</h1>
+          <ComponentContainer title="Données sur les allocataires (CAF)" description="Données provenant de l'INSEE sur les allocataires. Sélectionnez une variable à afficher, en valeur absolue ou en pourcentage au regard du nombre de personnes couvertes">
+            <MapCaf code={code} />
+          </ComponentContainer>
+          <br></br>
+          <h1>Fréquentation des structures France Services</h1>
+          <ComponentContainer title="France Services correspondants" description="Liste des structures France Services correspondant à la commune">
+            <MatchFs communeCode={code} />
+          </ComponentContainer>
+          </>
       ) : (
         <p>Chargement...</p>
       )}
     </div>
+    </Layout>
   );
 };
 

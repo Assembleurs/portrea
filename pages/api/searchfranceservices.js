@@ -9,13 +9,12 @@ export default function handler(req, res) {
   Papa.parse(csvFileContent, {
     header: true,
     complete: function (results) {
-      const franceServices = results.data.map((row) => row.lib_fs);
+      const franceServices = results.data;
 
-      // Vérifiez s'il existe un paramètre de requête `q` et, le cas échéant, filtrez les services.
-      const { q } = req.query;
-      if (q) {
-        const lowerCaseQ = q.toLowerCase();
-        const filteredFranceServices = franceServices.filter(service => service.toLowerCase().includes(lowerCaseQ));
+      // Vérifiez s'il existe un paramètre de requête `code` et, le cas échéant, filtrez les services.
+      const { code } = req.query;
+      if (code) {
+        const filteredFranceServices = franceServices.filter(service => service.insee_com === code);
         res.status(200).json(filteredFranceServices);
       } else {
         res.status(200).json(franceServices);
