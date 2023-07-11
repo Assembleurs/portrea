@@ -5,7 +5,7 @@ import MapCaf from '../../components/viz/Iris/MapCaf';
 import Layout from '../../components/Layout';
 import ComponentContainer from '../../components/nav/ComponentContainer';
 import dynamic from 'next/dynamic';
-
+import DestinationsFs from '../../components/viz/FranceServices/DestinationsFs';
 
 const MatchFs = dynamic(
   () => import('../../components/viz/FranceServices/MatchFs'),
@@ -47,14 +47,17 @@ const Territoire = () => {
         {commune ? (
           <>
             <h1 className="commune-title">{commune.nom}</h1>
-            <h1>Données socio-démographiques</h1>
+            <h1>🏘 Données socio-démographiques</h1>
             <ComponentContainer title="Données sur les allocataires (CAF)" description="Données provenant de l'INSEE sur les allocataires. Sélectionnez une variable à afficher, en valeur absolue ou en pourcentage au regard du nombre de personnes couvertes">
               <MapCaf code={code} />
             </ComponentContainer>
             <br></br>
-            <h1>Fréquentation des structures France Services</h1>
-            <ComponentContainer title="France Services correspondants" description="Liste des structures France Services correspondant à la commune">
+            <h1>🇫🇷 Fréquentation des structures France Services</h1>
+            <ComponentContainer title="Origine des usagers France Services" description="De quelles communes proviennent les usagers des structures France Services ?">
             <MatchFs code={code} />
+            </ComponentContainer>
+            <ComponentContainer title="Destinations des usagers France Services" description="Compte par nom de France Service pour la commune donnée.">
+            <DestinationsFs code={code} />
             </ComponentContainer>
           </>
         ) : (
