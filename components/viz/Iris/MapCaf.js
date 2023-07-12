@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
+import Switch from "react-switch";
 import chroma from 'chroma-js';
 
-const MapCaf = ({ code }) => {
+const MapCaf = ({ code, id }) => {
   const [map, setMap] = useState(null);
   const [data, setData] = useState(null);
   const [selectedVariable, setSelectedVariable] = useState('a'); // Variable sélectionnée par défaut
@@ -11,7 +11,7 @@ const MapCaf = ({ code }) => {
   useEffect(() => {
     const L = require('leaflet');
 
-    if (!map && document.getElementById('map')) {
+    if (!map && document.getElementById(id)) {
       const newMap = L.map('map').setView([50.603354, 3.888334], 9);
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -25,7 +25,7 @@ const MapCaf = ({ code }) => {
 
   useEffect(() => {
     if (code) {
-      fetch('/api/iriscode?code=' + code)
+      fetch('/api/insee/iriscafcode?code=' + code)
         .then((res) => res.json())
         .then((data) => {
           const filteredData = data.features.filter(feature => feature.properties.codgeo.startsWith(code));
@@ -102,12 +102,12 @@ const MapCaf = ({ code }) => {
     setSelectedVariable(event.target.value);
   };
 
-  const handleModeChange = (event) => {
-    setMode(event.target.value);
-  };
+  const handleModeChange = (checked) => {
+    setMode(checked ? "percentage" : "absolute");
+  };  
 
   return (
-    <div>
+    <div id={id}>
         <br></br>
       <select value={selectedVariable} onChange={handleVariableChange}>
         <option value="a">Nombre total d'allocataires</option>
@@ -132,12 +132,26 @@ const MapCaf = ({ code }) => {
         <option value="appa">Allocataires percevant la prime d'activité</option>
         <option value="arsas">Allocataires percevant le RSA socle</option>
       </select>
-      <label>
-        Mode :
-        <select value={mode} onChange={handleModeChange}>
-          <option value="absolute">Absolu</option>
-          <option value="percentage">Pourcentage</option>
-        </select>
+      <label htmlFor="mode-switch">
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ marginRight: 10 }}>Valeur Absolue</span>
+        <Switch 
+            onChange={handleModeChange} 
+            checked={mode === "percentage"} 
+            id="mode-switch"
+            onColor="#86d3ff"
+            onHandleColor="#2693e6"
+            handleDiameter={30}
+            uncheckedIcon={false}
+            checkedIcon={false}
+            boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+            activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+            height={20}
+            width={48}
+            className="react-switch"
+        />
+        <span style={{ marginLeft: 10 }}>Pourcentage</span>
+        </div>
       </label>
       <br></br>
       <div id="map" style={{ height: '400px' }}></div>
