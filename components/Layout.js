@@ -9,11 +9,11 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div style={{ margin: '0 10%' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid lightgrey', padding: '10px 0', marginBottom: '1rem' }}>
+    <div style={{ margin: '0 0%' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '0px solid lightgrey', padding: '20px 0', marginBottom: '0rem' }}>
         <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Portrea Hauts-de-France</div>
         <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
-          <Link href="/recherche">
+          <Link href="/">
             <a
               style={linkStyle}
               onMouseEnter={() => setIsHovered(true)}

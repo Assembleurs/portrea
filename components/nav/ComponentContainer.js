@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from '../../styles/ComponentContainer.module.css'
+import styles from '../../styles/ComponentContainer.module.css';
 
 const ComponentContainer = ({ title, description, children }) => {
   return (
-    <div style={{ margin: '1rem 0', backgroundColor: '#f8f9fa' }}>
+    <div className={styles.container}>
       <h2 className={styles['viz-title']}>{title}</h2>
       <p>{description}</p>
-      <div>
+      <div className={styles.childrenContainer}>
         {children}
       </div>
     </div>
