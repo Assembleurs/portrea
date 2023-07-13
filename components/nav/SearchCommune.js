@@ -15,7 +15,14 @@ const SearchCommune = ({ onSearch }) => {
       placeholder="Recherchez une commune"
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
-    />
+      style={{
+        width: '40%',
+        height: '60px',
+        padding: '10px',
+        fontSize: '30px',
+        borderRadius: '10px',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+        }}    />
   );
 };
 

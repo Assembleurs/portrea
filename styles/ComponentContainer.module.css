@@ -3,3 +3,29 @@
     font-size: 30px;
     color: rgb(98, 98, 98);
 }
+
+.container {
+    margin: 1rem 0;
+    background-color: #f8f9fa;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .grid > div {
+    width: 45%; /* Ajustez cette valeur selon vos besoins */
+    margin-bottom: 20px; /* Ajoutez cette ligne pour espacer les conteneurs */
+  }
+  
+  @media screen and (max-width: 767px) {
+    .grid > div {
+      width: 95%;
+    }
+  }
+  

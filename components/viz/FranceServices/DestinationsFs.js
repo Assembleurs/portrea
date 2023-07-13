@@ -28,7 +28,7 @@ const DestinationsFs = ({ code }) => {
         <YAxis dataKey="name" type="category" width={300} />
         <Tooltip />
         <Legend />
-        <Bar dataKey="count" fill="#8884d8" barSize={30} />
+        <Bar dataKey="count" fill="#c05299" barSize={30} />
       </BarChart>
     </ResponsiveContainer>
   );
