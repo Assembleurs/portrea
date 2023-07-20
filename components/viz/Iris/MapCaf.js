@@ -25,17 +25,24 @@ const MapCaf = ({ code, id }) => {
 
   useEffect(() => {
     if (code) {
-      fetch('/api/insee/iriscafcode?code=' + code)
+      fetch('/api/iris/comcode2caf?comcode=' + code)
         .then((res) => res.json())
         .then((data) => {
-          const filteredData = data.features.filter(feature => feature.properties.codgeo.startsWith(code));
-          setData({ ...data, features: filteredData });
+          const adjustedData = {
+            ...data,
+            features: data.map(d => ({
+              ...d,
+              properties: d.inseecafData,
+            }))
+          };
+          setData(adjustedData);
         })
         .catch((error) => {
-          console.error('Une erreur s\'est produite lors de la récupération des données:', error);
+          console.error('An error occurred while retrieving the data:', error);
         });
     }
   }, [code]);
+
 
   useEffect(() => {
     if (map && data) {
@@ -67,8 +74,15 @@ const MapCaf = ({ code, id }) => {
       const percentageColorScale = chroma.scale(['yellow', 'violet']).domain([minPercentage, maxPercentage]);
 
       data.features.forEach((feature) => {
-        const { coordinates } = feature.geometry;
-        const invertedCoordinates = coordinates[0][0].map(([lon, lat]) => [lat, lon]);
+        let invertedCoordinates;
+        if (feature.geometry.type === 'MultiPolygon') {
+          invertedCoordinates = feature.geometry.coordinates[0][0].map(([lon, lat]) => [lat, lon]);
+        } else if (feature.geometry.type === 'Polygon') {
+          invertedCoordinates = feature.geometry.coordinates[0].map(([lon, lat]) => [lat, lon]);
+        } else {
+          console.error('Unknown geometry type:', feature.geometry.type);
+          return;
+        }
       
         const value = feature.properties[selectedVariable];
         const percValue = feature.properties['percou'];
