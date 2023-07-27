@@ -78,11 +78,12 @@ const PlagesHoraires = ({ code }) => {
   const dayOptions = DAYS.map((day, i) => ({ value: day, label: DAYS_FR[i] })); 
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <div>
         <Select options={dayOptions} onChange={handleDayChange} defaultValue={dayOptions[0]} />
+        <div style={{ overflow: 'auto' }}>
         <BarChart
-          width={500}
+          width={400}
           height={300}
           data={horaires}
           margin={{
@@ -99,8 +100,9 @@ const PlagesHoraires = ({ code }) => {
           <Legend />
           <Bar dataKey="count" fill="#69a297" />
         </BarChart>
+        </div>
       </div>
-      <div style={{ marginLeft: '50px' }}>
+      <div style={{ marginTop: '20px' }}>
         <p style={{ fontSize: '22px' }}>Nombre de structures avec des horaires non renseignés : {nullScheduleStructures.length}</p> 
         <a 
           href="https://solen1.enquetes.social.gouv.fr/cgi-9/HE/SF?P=76z14z2z-1z-1z2747C6FAAF" 

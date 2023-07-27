@@ -11,3 +11,21 @@
   color: #999;
   margin-top: 2rem;
 }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+}
+
+.grid > div {
+  width: 45%; 
+  margin-bottom: 20px; 
+}
+
+
+@media screen and (max-width: 600px) {
+  .grid > div {
+    width: 100%;
+  }
+}

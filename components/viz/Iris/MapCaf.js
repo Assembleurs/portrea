@@ -1,18 +1,35 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react'; 
 import Switch from "react-switch";
 import chroma from 'chroma-js';
 
 const MapCaf = ({ code, id }) => {
   const [map, setMap] = useState(null);
   const [data, setData] = useState(null);
-  const [selectedVariable, setSelectedVariable] = useState('a'); // Variable sélectionnée par défaut
-  const [mode, setMode] = useState('absolute'); // Mode sélectionné : 'absolute' ou 'percentage'
+  const [selectedVariable, setSelectedVariable] = useState('a'); 
+  const [mode, setMode] = useState('absolute'); 
+  const mapRef = useRef(null); 
+  const [showStructures, setShowStructures] = useState(false);
+  const [structureData, setStructureData] = useState(null);
 
+  useEffect(() => {
+    if (code && showStructures) {
+      fetch(`/api/structures/structures-inclusion?irisCode=${code}`)
+        .then((res) => res.json())
+        .then(setStructureData)
+        .catch((error) => {
+          console.error('An error occurred while retrieving the structure data:', error);
+        });
+    } else {
+      setStructureData(null);
+    }
+  }, [code, showStructures]);
+  
   useEffect(() => {
     const L = require('leaflet');
 
     if (!map && document.getElementById(id)) {
       const newMap = L.map('map').setView([50.603354, 3.888334], 9);
+      mapRef.current = newMap;
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -112,6 +129,29 @@ const MapCaf = ({ code, id }) => {
     }
   }, [map, data, selectedVariable, mode]);
 
+  useEffect(() => {
+    const L = require('leaflet');
+
+    if (mapRef.current) {
+      mapRef.current.eachLayer(layer => {
+          if (layer instanceof L.CircleMarker) {
+          mapRef.current.removeLayer(layer);
+          }
+      });
+
+      if (showStructures && structureData) {
+          for (let feature of structureData.features) {
+            L.circleMarker(feature.geometry.coordinates.reverse(), { color: 'black', radius: 2, fillOpacity: 1 }).addTo(mapRef.current)
+            .bindPopup(`${feature.properties.nom}`);
+          }
+      }
+    }
+  }, [showStructures, structureData]);
+
+  const handleShowStructuresChange = (checked) => {
+    setShowStructures(checked);
+  };
+
   const handleVariableChange = (event) => {
     setSelectedVariable(event.target.value);
   };
@@ -167,6 +207,27 @@ const MapCaf = ({ code, id }) => {
         <span style={{ marginLeft: 10 }}>Pourcentage</span>
         </div>
       </label>
+      <label htmlFor="show-structures-switch">
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <span style={{ marginRight: 10 }}>Cacher les structures</span>
+    <Switch 
+      onChange={handleShowStructuresChange} 
+      checked={showStructures} 
+      id="show-structures-switch"
+      onColor="#86d3ff"
+      onHandleColor="#2693e6"
+      handleDiameter={30}
+      uncheckedIcon={false}
+      checkedIcon={false}
+      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+      height={20}
+      width={48}
+      className="react-switch"
+    />
+    <span style={{ marginLeft: 10 }}>Afficher les structures</span>
+  </div>
+</label>
       <br></br>
       <div id="map" style={{ height: '400px' }}></div>
     </div>

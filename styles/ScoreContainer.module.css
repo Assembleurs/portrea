@@ -1,0 +1,11 @@
+.score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+  
+@media (min-width: 768px) {
+    .score-container {
+      flex-direction: row;
+    }
+}

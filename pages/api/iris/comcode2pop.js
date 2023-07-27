@@ -1,4 +1,4 @@
-// pages/api/iris/comcode2caf.js
+// pages/api/iris/comocode2emploi.js
 import fs from 'fs';
 import path from 'path';
 
@@ -39,9 +39,20 @@ export default function handler(req, res) {
   }
 
   const responseData = data.map(feature => {
-    const inseepopData = inseepopDataByIrisCode[feature.properties.iris_code];
+    let inseepopData = inseepopDataByIrisCode[feature.properties.iris_code];
+    if (inseepopData) {
+      inseepopData = Object.entries(inseepopData).reduce((acc, [key, value]) => {
+        if (typeof value === 'number') {
+          acc[key] = Math.round(value);
+        } else {
+          acc[key] = value;
+        }
+        return acc;
+      }, {});
+    }
     return { ...feature, inseepopData };
   });
+  
 
   res.status(200).json(responseData);
 }

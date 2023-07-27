@@ -7,7 +7,23 @@ const MapPop = ({ code, id }) => {
   const [data, setData] = useState(null);
   const [selectedVariable, setSelectedVariable] = useState('p19_pop');
   const [mode, setMode] = useState('absolute'); 
+  const [showStructures, setShowStructures] = useState(false);
 
+  const [structureData, setStructureData] = useState(null);
+
+  useEffect(() => {
+    if (code && showStructures) {
+      fetch(`/api/structures/structures-inclusion?irisCode=${code}`)
+        .then((res) => res.json())
+        .then(setStructureData)
+        .catch((error) => {
+          console.error('An error occurred while retrieving the structure data:', error);
+        });
+    } else {
+      setStructureData(null);
+    }
+  }, [code, showStructures]);
+  
   useEffect(() => {
     const L = require('leaflet');
 
@@ -114,7 +130,31 @@ const MapPop = ({ code, id }) => {
         mapRef.current.fitBounds(bounds);
       }      
     }
+    
   }, [id, data, selectedVariable, mode]);
+
+  useEffect(() => {
+    const L = require('leaflet');
+
+    if (mapRef.current) {
+        mapRef.current.eachLayer(layer => {
+            if (layer instanceof L.CircleMarker) {
+            mapRef.current.removeLayer(layer);
+            }
+        });
+        
+        if (showStructures && structureData) {
+            for (let feature of structureData.features) {
+              L.circleMarker(feature.geometry.coordinates.reverse(), { color: 'black', radius: 2, fillOpacity: 1 }).addTo(mapRef.current)
+              .bindPopup(`${feature.properties.nom}`);
+            }
+        }
+    }
+}, [showStructures, structureData]);
+
+  const handleShowStructuresChange = (checked) => {
+    setShowStructures(checked);
+  };
 
   const handleVariableChange = (event) => {
     setSelectedVariable(event.target.value);
@@ -133,6 +173,9 @@ const MapPop = ({ code, id }) => {
         <option value="p19_poph">Nombre d'hommes</option>
         <option value="p19_popf">Nombre de femmes</option>
         <option value="c19_pop15p">Population de 15 ans ou plus</option>
+        <option value="p19_pop65p">Nombre de personnes de 65 ans ou plus</option>
+        <option value="p19_pop6579">Nombre de personnes de 65 à 79 ans</option>
+        <option value="p19_pop80p">nombre de personnes de 80 ans ou plus</option>
         <option value="c19_pop15p_cs1">Population de 15 ans ou plus : Agriculteurs exploitants</option>
         <option value="c19_pop15p_cs2">Population de 15 ans ou plus : Artisans, commerçants et chefs d'entreprise</option>
         <option value="c19_pop15p_cs3">Population de 15 ans ou plus : Cadres et professions intellectuelles supérieures</option>
@@ -146,26 +189,47 @@ const MapPop = ({ code, id }) => {
         <option value="p19_pop_imm">Population immigrée</option>
       </select>
       <label htmlFor="mode-switch">
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ marginRight: 10 }}>Valeur Absolue</span>
-        <Switch 
-            onChange={handleModeChange} 
-            checked={mode === "percentage"} 
-            id="mode-switch"
-            onColor="#86d3ff"
-            onHandleColor="#2693e6"
-            handleDiameter={30}
-            uncheckedIcon={false}
-            checkedIcon={false}
-            boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-            activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-            height={20}
-            width={48}
-            className="react-switch"
-        />
-        <span style={{ marginLeft: 10 }}>Pourcentage</span>
-        </div>
-      </label>
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <span style={{ marginRight: 10 }}>Valeur absolue</span>
+    <Switch 
+        onChange={handleModeChange} 
+        checked={mode === "percentage"} 
+        id="mode-switch"
+        onColor="#86d3ff"
+        onHandleColor="#2693e6"
+        handleDiameter={30}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+        activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+        height={20}
+        width={48}
+        className="react-switch"
+    />
+    <span style={{ marginLeft: 10 }}>Pourcentage</span>
+  </div>
+</label>
+<label htmlFor="show-structures-switch">
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <span style={{ marginRight: 10 }}>Cacher les structures</span>
+    <Switch 
+      onChange={handleShowStructuresChange} 
+      checked={showStructures} 
+      id="show-structures-switch"
+      onColor="#86d3ff"
+      onHandleColor="#2693e6"
+      handleDiameter={30}
+      uncheckedIcon={false}
+      checkedIcon={false}
+      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+      height={20}
+      width={48}
+      className="react-switch"
+    />
+    <span style={{ marginLeft: 10 }}>Afficher les structures</span>
+  </div>
+</label>
       </div>
       <div style={{ height: '400px', marginTop: '20px' }}>
         <div id={id} style={{ position: 'relative', height: '100%' }}></div>

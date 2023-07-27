@@ -3,12 +3,15 @@ import React, { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import MapCaf from '../../components/viz/Iris/MapCaf';
 import MapPop from '../../components/viz/Iris/MapPop';
+import MapEmploi from '../../components/viz/Iris/MapEmploi';
 import Layout from '../../components/Layout';
 import ComponentContainer from '../../components/nav/ComponentContainer';
 import dynamic from 'next/dynamic';
 import DestinationsFs from '../../components/viz/FranceServices/DestinationsFs';
 import PlagesHoraires from '../../components/viz/Structures/PlagesHoraires';
 import styles from '../../styles/Territoire.module.css';
+import MapDiplome from '../../components/viz/Iris/MapDiplome';
+import ScoreContainer from '../../components/nav/ScoreContainer';
 
 const MatchFs = dynamic(
   () => import('../../components/viz/FranceServices/MatchFs'),
@@ -50,13 +53,32 @@ const Territoire = () => {
          {commune ? (
           <>
             <h1 className="commune-title">{commune.nom}</h1>
+            <ScoreContainer comcode={commune.code}/>
             <h1>🏘 Données socio-démographiques</h1>
             <div className={styles.grid}>
-              <ComponentContainer title="📄 Données sur les allocataires (CAF)" description="Données provenant de l'INSEE sur les allocataires. Sélectionnez une variable à afficher, en valeur absolue ou en pourcentage au regard du nombre de personnes couvertes">
+            <ComponentContainer 
+              title="📊 Données démographiques et CSP" 
+              description="Données provenant de l'INSEE sur les catégories socio-professionnelles, et les populations immigrées ou étrangères Sélectionnez une variable à afficher, en valeur absolue ou en pourcentage au regard de la population"
+              dataInfo="https://www.insee.fr/fr/statistiques/6543200#documentation">
+                <MapPop code={code} id="mapPop" />
+              </ComponentContainer>
+              <ComponentContainer 
+                title="📄 Données sur les allocataires (CAF)" 
+                description="Données provenant de l'INSEE sur les allocataires. Sélectionnez une variable à afficher, en valeur absolue ou en pourcentage au regard du nombre de personnes couvertes"
+                dataInfo="https://www.insee.fr/fr/statistiques/6679585#documentation">
                 <MapCaf code={code} id="mapCaf" />
               </ComponentContainer>
-              <ComponentContainer title="📊 Données démographiques et CSP" description="Données provenant de l'INSEE sur les catégories socio-professionnelles, et les populations immigrées ou étrangères">
-                <MapPop code={code} id="mapPop" />
+              <ComponentContainer 
+              title="💼 Données sur l'emploi" 
+              description="Données provenant de l'INSEE sur les catégories de demandeurs d'emploi"
+              dataInfo="https://www.insee.fr/fr/statistiques/6473526#documentation">
+                <MapEmploi code={code} id="mapEmploi" />
+              </ComponentContainer>
+              <ComponentContainer 
+              title="👩‍🎓 Données sur les diplômes" 
+              description="Données provenant de l'INSEE sur les formations et diplômes"
+              dataInfo="https://www.insee.fr/fr/statistiques/6543298#documentation">
+                <MapDiplome code={code} id="mapDiplome" />
               </ComponentContainer>
             </div>
             <br></br>
@@ -65,16 +87,18 @@ const Territoire = () => {
               <ComponentContainer title="🗺 Origine des usagers France Services" description="De quelles communes proviennent les usagers des structures France Services ?">
               <MatchFs code={code} />
               </ComponentContainer>
-              <ComponentContainer title="📍 Destinations des usagers France Services" description="Compte par nom de France Service pour la commune donnée.">
+              <ComponentContainer title="📍 Destinations des usagers France Services" description="Structures France Services dans lesquelles se rendent les habitants de la commune.">
               <DestinationsFs code={code} />
               </ComponentContainer>
+              </div>
               <br></br>
+              <div>
             <h1>👩🏽‍💻 Données sur l'offre en médiation numérique</h1>
             <div className={styles.grid}>
               <ComponentContainer title="🕐 Plages horaires des structures" description="Nombre de structures ouvertes dans la commune selon les jours et les heures.">
               <PlagesHoraires code={code} />
               </ComponentContainer>
-            </div>
+              </div>
             </div>
           </>
         ) : (

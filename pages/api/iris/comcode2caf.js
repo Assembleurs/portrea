@@ -39,9 +39,20 @@ export default function handler(req, res) {
   }
 
   const responseData = data.map(feature => {
-    const inseecafData = inseecafDataByIrisCode[feature.properties.iris_code];
+    let inseecafData = inseecafDataByIrisCode[feature.properties.iris_code];
+    if (inseecafData) {
+      inseecafData = Object.entries(inseecafData).reduce((acc, [key, value]) => {
+        if (typeof value === 'number') {
+          acc[key] = Math.round(value);
+        } else {
+          acc[key] = value;
+        }
+        return acc;
+      }, {});
+    }
     return { ...feature, inseecafData };
   });
+  
 
   res.status(200).json(responseData);
 }
