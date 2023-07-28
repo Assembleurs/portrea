@@ -71,10 +71,14 @@ const MapCaf = ({ code, id }) => {
         }
       });
 
-      const values = data.features.map(feature => feature.properties[selectedVariable]);
-      const minValue = Math.min(...values);
-      const maxValue = Math.max(...values);
+      const values = data.features.filter(feature => feature.properties && feature.properties[selectedVariable])
+      .map(feature => feature.properties[selectedVariable]);
 
+      if (values.length === 0) {
+      return;
+      }     const minValue = Math.min(...values);
+            const maxValue = Math.max(...values);
+            
       const absoluteColorScale = chroma.scale(['yellow', 'violet']).domain([minValue, maxValue]);
 
       const percentageValues = data.features.map(feature => {

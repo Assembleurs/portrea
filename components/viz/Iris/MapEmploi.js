@@ -74,9 +74,13 @@ const MapEmploi = ({ code, id }) => {
         }
       });
 
-      const values = data.features.map(feature => feature.properties[selectedVariable]);
-      const minValue = Math.min(...values);
-      const maxValue = Math.max(...values);
+      const values = data.features.filter(feature => feature.properties && feature.properties[selectedVariable])
+      .map(feature => feature.properties[selectedVariable]);
+
+      if (values.length === 0) {
+      return;
+      }     const minValue = Math.min(...values);
+            const maxValue = Math.max(...values);
 
       const absoluteColorScale = chroma.scale(['yellow', 'violet']).domain([minValue, maxValue]);
 
@@ -109,12 +113,13 @@ const MapEmploi = ({ code, id }) => {
       
         let color;
         let popupContent;
-        if (mode === 'absolute') {
+        if (!feature.properties || !feature.properties[selectedVariable]) {
+          color = 'grey';  // Set to a color indicating missing data
+          popupContent = 'Données manquantes';
+        } else if (mode === 'absolute') {
           color = absoluteColorScale(value).hex();
           popupContent = `${selectedVariable}: ${value}`;
-        }
-      
-        if (mode === 'percentage' && percValue > 0) {
+        } else if (mode === 'percentage' && percValue > 0) {
           const percentage = (value / percValue) * 100;
           color = percentageColorScale(percentage).hex();
           popupContent = `${selectedVariable}: ${value} (${percentage.toFixed(2)}%)`;
