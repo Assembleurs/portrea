@@ -1,11 +1,42 @@
-.score-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.score, .sub-score-container {
+  background-color: #ffffff; 
+  color: #000000; 
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
 }
-  
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 95%;
+}
+
+.sub-score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 @media (min-width: 768px) {
-    .score-container {
-      flex-direction: row;
-    }
+  .sub-score-container {
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #304d6d;
+  }
+
+  .score-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .score {
+    flex-basis: 45%; 
+  }
 }

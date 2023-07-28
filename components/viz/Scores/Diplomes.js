@@ -2,36 +2,48 @@ import React, { useEffect, useState } from 'react';
 
 const Diplomes = ({ comcode }) => {
   const [score, setScore] = useState(null);
+  const [difference, setDifference] = useState(null);
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     if (comcode) {
-      Promise.all([
-        fetch(`/api/iris/comcode2diplome?comcode=${comcode}`).then((res) => res.json()),
-        fetch(`/api/iris/comcode2pop?comcode=${comcode}`).then((res) => res.json()),
-      ]).then(([diplomeData, popData]) => {
-        const p19_nscol15p_diplmin = diplomeData.reduce(
-          (total, item) => total + item.inseediplomeData.p19_nscol15p_diplmin, 
-          0
-        );
-        const pop65p = popData.reduce(
-          (total, item) => total + item.inseepopData.p19_pop65p, 
-          0
-        );
-        setScore(p19_nscol15p_diplmin - pop65p);
-      });
+      fetch(`/api/iris/comcode2diplome?comcode=${comcode}`)
+        .then((res) => res.json())
+        .then((diplomeData) => {
+          const p19_nscol15p_diplmin = diplomeData.reduce(
+            (total, item) => total + item.inseediplomeData.p19_nscol15p_diplmin, 
+            0
+          );
+          const p19_nscol15p = diplomeData.reduce(
+            (total, item) => total + item.inseediplomeData.p19_nscol15p,
+            0
+          );
+          const proportionValue = (p19_nscol15p_diplmin / p19_nscol15p) * 100;
+          const diff = proportionValue - 21.86;
+          setScore(p19_nscol15p_diplmin);
+          setDifference(diff.toFixed(2));
+
+          if (diff > 0) {
+            setMessage(`+${diff.toFixed(2)}pts au-dessus de la moyenne nationale`);
+          } else {
+            setMessage(`${diff.toFixed(2)}pts en dessous de la moyenne nationale`);
+          }
+        });
     }
   }, [comcode]);
 
   const boxStyle = {
-    backgroundColor: '#F0F0F0',
+    backgroundColor: 'white',
     borderRadius: '5px',
     padding: '20px',
     marginTop: '15px'
   };
 
   const scoreStyle = {
-    fontSize: '32px',
-    fontWeight: 'bold'
+    fontSize: '30px',
+    fontWeight: 'bold',
+    backgroundColor: 'white',  
+    padding: '10px'
   };
 
   const titleStyle = {
@@ -39,11 +51,16 @@ const Diplomes = ({ comcode }) => {
     fontWeight: 'bold'
   };
 
+  const messageStyle = difference > 0 ? { backgroundColor: '#ffa69e' } : { backgroundColor: '#d9ed92' };
+
   return (
     <div style={boxStyle}>
-      <div style={titleStyle}>Nombre de personnes sans diplomes âgés de moins de 65 ans</div>
-      {score !== null ? (
-        <div style={scoreStyle}>{score}</div>
+      <div style={titleStyle}>👩‍🎓 Personnes sans diplomes ou CEP</div>
+      {score !== null && difference !== null ? (
+        <>
+          <div style={scoreStyle}>{score}</div>
+          <div style={messageStyle}>{message}</div>
+        </>
       ) : (
         <p>Chargement...</p>
       )}
