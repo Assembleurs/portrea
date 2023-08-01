@@ -12,6 +12,7 @@ import PlagesHoraires from '../../components/viz/Structures/PlagesHoraires';
 import styles from '../../styles/Territoire.module.css';
 import MapDiplome from '../../components/viz/Iris/MapDiplome';
 import ScoreContainer from '../../components/nav/ScoreContainer';
+import StructuresCategories from '../../components/viz/Structures/StructuresCategories';
 
 const MatchFs = dynamic(
   () => import('../../components/viz/FranceServices/MatchFs'),
@@ -95,6 +96,9 @@ const Territoire = () => {
               <div>
             <h1>👩🏽‍💻 Données sur l'offre en médiation numérique</h1>
             <div className={styles.grid}>
+              <ComponentContainer title="📍 Localisation des structures" description="Présence des structures selon les accompagnements proposés">
+              <StructuresCategories irisCode={code} id="StructuresCategories" />
+              </ComponentContainer>
               <ComponentContainer title="🕐 Plages horaires des structures" description="Nombre de structures ouvertes dans la commune selon les jours et les heures.">
               <PlagesHoraires code={code} />
               </ComponentContainer>
