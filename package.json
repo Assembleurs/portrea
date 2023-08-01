@@ -45,7 +45,8 @@
     "redis": "^4.6.6",
     "rss": "^1.2.2",
     "sqlite3": "^5.1.6",
-    "styled-components": "^6.0.2"
+    "styled-components": "^6.0.2",
+    "swr": "^2.2.0"
   },
   "prettier": {
     "arrowParens": "always",
