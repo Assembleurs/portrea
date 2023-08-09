@@ -1,0 +1,560 @@
+[
+  {
+    "Code EPCI": 200018083,
+    "Libellé EPCI": "CC de Desvres-Samer",
+    "Taux (en %)": "18,7",
+    "Nombre": "3 346"
+  },
+  {
+    "Code EPCI": 200030633,
+    "Libellé EPCI": "CA du Caudrésis et du Catésis",
+    "Taux (en %)": "19,7",
+    "Nombre": "10 171"
+  },
+  {
+    "Code EPCI": 200033579,
+    "Libellé EPCI": "CU d'Arras",
+    "Taux (en %)": "15,8",
+    "Nombre": "13 846"
+  },
+  {
+    "Code EPCI": 200035442,
+    "Libellé EPCI": "CC du Sud-Artois",
+    "Taux (en %)": "20,0",
+    "Nombre": "4 424"
+  },
+  {
+    "Code EPCI": 200037059,
+    "Libellé EPCI": "CC de la Haute-Somme",
+    "Taux (en %)": "21,6",
+    "Nombre": "4 904"
+  },
+  {
+    "Code EPCI": 200040426,
+    "Libellé EPCI": "CC du Val de l'Oise",
+    "Taux (en %)": "19,3",
+    "Nombre": "2 512"
+  },
+  {
+    "Code EPCI": 200040947,
+    "Libellé EPCI": "CC de Flandre Intérieure",
+    "Taux (en %)": "17,4",
+    "Nombre": "14 386"
+  },
+  {
+    "Code EPCI": 200040954,
+    "Libellé EPCI": "CC des Hauts de Flandre",
+    "Taux (en %)": "17,3",
+    "Nombre": "7 378"
+  },
+  {
+    "Code EPCI": 200041960,
+    "Libellé EPCI": "CC Pévèle-Carembault",
+    "Taux (en %)": "13,9",
+    "Nombre": "10 537"
+  },
+  {
+    "Code EPCI": 200042190,
+    "Libellé EPCI": "CA de la Porte du Hainaut",
+    "Taux (en %)": "17,5",
+    "Nombre": "21 889"
+  },
+  {
+    "Code EPCI": 200043263,
+    "Libellé EPCI": "CC Coeur de l'Avesnois",
+    "Taux (en %)": "19,5",
+    "Nombre": "4 783"
+  },
+  {
+    "Code EPCI": 200043321,
+    "Libellé EPCI": "CC du Pays de Mormal",
+    "Taux (en %)": "16,8",
+    "Nombre": "6 544"
+  },
+  {
+    "Code EPCI": 200043396,
+    "Libellé EPCI": "CA Maubeuge Val de Sambre",
+    "Taux (en %)": "17,9",
+    "Nombre": "17 833"
+  },
+  {
+    "Code EPCI": 200043404,
+    "Libellé EPCI": "CC du Sud Avesnois",
+    "Taux (en %)": "21,3",
+    "Nombre": "4 365"
+  },
+  {
+    "Code EPCI": 200043495,
+    "Libellé EPCI": "CA du Pays de Laon",
+    "Taux (en %)": "18,0",
+    "Nombre": "6 371"
+  },
+  {
+    "Code EPCI": 200044030,
+    "Libellé EPCI": "CC des Sept Vallées",
+    "Taux (en %)": "21,4",
+    "Nombre": "5 201"
+  },
+  {
+    "Code EPCI": 200044048,
+    "Libellé EPCI": "CC Osartis Marquion",
+    "Taux (en %)": "16,3",
+    "Nombre": "5 470"
+  },
+  {
+    "Code EPCI": 200044618,
+    "Libellé EPCI": "CA du Douaisis (C.A.D.)",
+    "Taux (en %)": "17,6",
+    "Nombre": "21 127"
+  },
+  {
+    "Code EPCI": 200066975,
+    "Libellé EPCI": "CC Senlis Sud Oise",
+    "Taux (en %)": "13,9",
+    "Nombre": "2 724"
+  },
+  {
+    "Code EPCI": 200067965,
+    "Libellé EPCI": "CA de la Région de Compiègne et de la Basse Automne",
+    "Taux (en %)": "14,8",
+    "Nombre": "9 916"
+  },
+  {
+    "Code EPCI": 200067973,
+    "Libellé EPCI": "CC Thelloise",
+    "Taux (en %)": "14,1",
+    "Nombre": "6 703"
+  },
+  {
+    "Code EPCI": 200067999,
+    "Libellé EPCI": "CA du Beauvaisis",
+    "Taux (en %)": "16,7",
+    "Nombre": "13 760"
+  },
+  {
+    "Code EPCI": 200068005,
+    "Libellé EPCI": "CC de l'Oise Picarde",
+    "Taux (en %)": "18,6",
+    "Nombre": "3 175"
+  },
+  {
+    "Code EPCI": 200068047,
+    "Libellé EPCI": "CA Creil Sud Oise",
+    "Taux (en %)": "15,3",
+    "Nombre": "9 937"
+  },
+  {
+    "Code EPCI": 200068500,
+    "Libellé EPCI": "CA de Cambrai",
+    "Taux (en %)": "18,1",
+    "Nombre": "12 046"
+  },
+  {
+    "Code EPCI": 200069029,
+    "Libellé EPCI": "CA des Deux Baies en Montreuillois",
+    "Taux (en %)": "19,1",
+    "Nombre": "10 636"
+  },
+  {
+    "Code EPCI": 200069037,
+    "Libellé EPCI": "CA du Pays de Saint-Omer",
+    "Taux (en %)": "17,5",
+    "Nombre": "14 774"
+  },
+  {
+    "Code EPCI": 200069235,
+    "Libellé EPCI": "CC du Haut Pays du Montreuillois",
+    "Taux (en %)": "20,1",
+    "Nombre": "2 495"
+  },
+  {
+    "Code EPCI": 200069482,
+    "Libellé EPCI": "CC des Campagnes de l'Artois",
+    "Taux (en %)": "17,4",
+    "Nombre": "4 659"
+  },
+  {
+    "Code EPCI": 200069672,
+    "Libellé EPCI": "CC du Ternois",
+    "Taux (en %)": "21,7",
+    "Nombre": "6 735"
+  },
+  {
+    "Code EPCI": 200069722,
+    "Libellé EPCI": "CC Interrégionale Aumale – Blangy-sur-Bresle (partie Hauts-de-France)",
+    "Taux (en %)": "20,2",
+    "Nombre": 743
+  },
+  {
+    "Code EPCI": 200070928,
+    "Libellé EPCI": "CC Terre de Picardie",
+    "Taux (en %)": "19,7",
+    "Nombre": "2 865"
+  },
+  {
+    "Code EPCI": 200070936,
+    "Libellé EPCI": "CC Ponthieu-Marquenterre",
+    "Taux (en %)": "22,0",
+    "Nombre": "5 980"
+  },
+  {
+    "Code EPCI": 200070944,
+    "Libellé EPCI": "CC du Vimeu",
+    "Taux (en %)": "21,4",
+    "Nombre": "4 026"
+  },
+  {
+    "Code EPCI": 200070951,
+    "Libellé EPCI": "CC du Territoire Nord Picardie",
+    "Taux (en %)": "18,5",
+    "Nombre": "4 719"
+  },
+  {
+    "Code EPCI": 200070969,
+    "Libellé EPCI": "CC Avre Luce Noye",
+    "Taux (en %)": "16,8",
+    "Nombre": "2 904"
+  },
+  {
+    "Code EPCI": 200070977,
+    "Libellé EPCI": "CC du Grand Roye",
+    "Taux (en %)": "20,0",
+    "Nombre": "4 223"
+  },
+  {
+    "Code EPCI": 200070985,
+    "Libellé EPCI": "CC de l'Est de la Somme",
+    "Taux (en %)": "21,9",
+    "Nombre": "3 692"
+  },
+  {
+    "Code EPCI": 200070993,
+    "Libellé EPCI": "CA de la Baie de Somme",
+    "Taux (en %)": "21,5",
+    "Nombre": "8 942"
+  },
+  {
+    "Code EPCI": 200071181,
+    "Libellé EPCI": "CC Somme Sud-Ouest",
+    "Taux (en %)": "20,2",
+    "Nombre": "6 346"
+  },
+  {
+    "Code EPCI": 200071223,
+    "Libellé EPCI": "CC Nièvre et Somme",
+    "Taux (en %)": "18,3",
+    "Nombre": "4 195"
+  },
+  {
+    "Code EPCI": 200071769,
+    "Libellé EPCI": "CC Picardie des Châteaux",
+    "Taux (en %)": "19,3",
+    "Nombre": "2 678"
+  },
+  {
+    "Code EPCI": 200071785,
+    "Libellé EPCI": "CA Chauny-Tergnier-La Fère",
+    "Taux (en %)": "19,9",
+    "Nombre": "8 991"
+  },
+  {
+    "Code EPCI": 200071892,
+    "Libellé EPCI": "CA du Saint-Quentinois",
+    "Taux (en %)": "19,1",
+    "Nombre": "12 703"
+  },
+  {
+    "Code EPCI": 200071983,
+    "Libellé EPCI": "CC Thiérache Sambre et Oise",
+    "Taux (en %)": "23,0",
+    "Nombre": "3 188"
+  },
+  {
+    "Code EPCI": 200071991,
+    "Libellé EPCI": "CC Retz-en-Valois",
+    "Taux (en %)": "17,2",
+    "Nombre": "4 140"
+  },
+  {
+    "Code EPCI": 200072031,
+    "Libellé EPCI": "CA de la Région de Château-Thierry",
+    "Taux (en %)": "19,1",
+    "Nombre": "8 342"
+  },
+  {
+    "Code EPCI": 200072460,
+    "Libellé EPCI": "CA de Béthune-Bruay, Artois-Lys Romane",
+    "Taux (en %)": "17,3",
+    "Nombre": "38 584"
+  },
+  {
+    "Code EPCI": 200072478,
+    "Libellé EPCI": "CC Pays d'Opale",
+    "Taux (en %)": "16,9",
+    "Nombre": "3 692"
+  },
+  {
+    "Code EPCI": 240200444,
+    "Libellé EPCI": "CC de la Thiérache du Centre",
+    "Taux (en %)": "21,6",
+    "Nombre": "4 684"
+  },
+  {
+    "Code EPCI": 240200469,
+    "Libellé EPCI": "CC du Pays de la Serre",
+    "Taux (en %)": "21,0",
+    "Nombre": "2 475"
+  },
+  {
+    "Code EPCI": 240200477,
+    "Libellé EPCI": "CA GrandSoissons Agglomération",
+    "Taux (en %)": "20,1",
+    "Nombre": "8 554"
+  },
+  {
+    "Code EPCI": 240200493,
+    "Libellé EPCI": "CC du Pays du Vermandois",
+    "Taux (en %)": "20,1",
+    "Nombre": "5 043"
+  },
+  {
+    "Code EPCI": 240200501,
+    "Libellé EPCI": "CC du Val de l'Aisne",
+    "Taux (en %)": "17,7",
+    "Nombre": "2 843"
+  },
+  {
+    "Code EPCI": 240200519,
+    "Libellé EPCI": "CC du Canton d'Oulchy-le-Château",
+    "Taux (en %)": "18,7",
+    "Nombre": 851
+  },
+  {
+    "Code EPCI": 240200576,
+    "Libellé EPCI": "CC de la Champagne Picarde",
+    "Taux (en %)": "17,6",
+    "Nombre": "2 974"
+  },
+  {
+    "Code EPCI": 240200584,
+    "Libellé EPCI": "CC du Canton de Charly-sur-Marne",
+    "Taux (en %)": "18,5",
+    "Nombre": "2 303"
+  },
+  {
+    "Code EPCI": 240200592,
+    "Libellé EPCI": "CC du Chemin des Dames",
+    "Taux (en %)": "19,6",
+    "Nombre": 857
+  },
+  {
+    "Code EPCI": 240200600,
+    "Libellé EPCI": "CC des Trois Rivières",
+    "Taux (en %)": "22,4",
+    "Nombre": "3 838"
+  },
+  {
+    "Code EPCI": 240200634,
+    "Libellé EPCI": "CC des Portes de la Thiérache",
+    "Taux (en %)": "24,6",
+    "Nombre": "1 407"
+  },
+  {
+    "Code EPCI": 200093201,
+    "Libellé EPCI": "Métropole Européenne de Lille",
+    "Taux (en %)": "13,4",
+    "Nombre": "122 323"
+  },
+  {
+    "Code EPCI": 245900428,
+    "Libellé EPCI": "CU de Dunkerque",
+    "Taux (en %)": "17,3",
+    "Nombre": "28 013"
+  },
+  {
+    "Code EPCI": 245900758,
+    "Libellé EPCI": "CC Flandre Lys",
+    "Taux (en %)": "16,1",
+    "Nombre": "5 042"
+  },
+  {
+    "Code EPCI": 245901038,
+    "Libellé EPCI": "CC du Pays Solesmois",
+    "Taux (en %)": "18,3",
+    "Nombre": "2 221"
+  },
+  {
+    "Code EPCI": 245901061,
+    "Libellé EPCI": "CC de la Haute-Deûle",
+    "Taux (en %)": "14,6",
+    "Nombre": "2 862"
+  },
+  {
+    "Code EPCI": 245901152,
+    "Libellé EPCI": "CC Coeur d'Ostrevent",
+    "Taux (en %)": "17,5",
+    "Nombre": "9 916"
+  },
+  {
+    "Code EPCI": 245901160,
+    "Libellé EPCI": "CA Valenciennes Métropole",
+    "Taux (en %)": "16,3",
+    "Nombre": "25 171"
+  },
+  {
+    "Code EPCI": 246000129,
+    "Libellé EPCI": "CC du Liancourtois",
+    "Taux (en %)": "15,2",
+    "Nombre": "2 857"
+  },
+  {
+    "Code EPCI": 246000376,
+    "Libellé EPCI": "CC du Clermontois",
+    "Taux (en %)": "15,6",
+    "Nombre": "4 696"
+  },
+  {
+    "Code EPCI": 246000566,
+    "Libellé EPCI": "CC du Plateau Picard",
+    "Taux (en %)": "17,3",
+    "Nombre": "4 125"
+  },
+  {
+    "Code EPCI": 246000582,
+    "Libellé EPCI": "CC des Sablons",
+    "Taux (en %)": "14,6",
+    "Nombre": "4 360"
+  },
+  {
+    "Code EPCI": 246000707,
+    "Libellé EPCI": "CC du Vexin-Thelle",
+    "Taux (en %)": "16,0",
+    "Nombre": "2 607"
+  },
+  {
+    "Code EPCI": 246000749,
+    "Libellé EPCI": "CC des Lisières de l'Oise",
+    "Taux (en %)": "17,0",
+    "Nombre": "2 217"
+  },
+  {
+    "Code EPCI": 246000756,
+    "Libellé EPCI": "CC du Pays Noyonnais",
+    "Taux (en %)": "19,1",
+    "Nombre": "4 989"
+  },
+  {
+    "Code EPCI": 246000764,
+    "Libellé EPCI": "CC de l'Aire Cantilienne",
+    "Taux (en %)": "15,1",
+    "Nombre": "5 570"
+  },
+  {
+    "Code EPCI": 246000772,
+    "Libellé EPCI": "CC des Deux Vallées",
+    "Taux (en %)": "16,8",
+    "Nombre": "3 134"
+  },
+  {
+    "Code EPCI": 246000848,
+    "Libellé EPCI": "CC de la Picardie Verte",
+    "Taux (en %)": "19,8",
+    "Nombre": "5 181"
+  },
+  {
+    "Code EPCI": 246000855,
+    "Libellé EPCI": "CC du Pays des Sources",
+    "Taux (en %)": "16,5",
+    "Nombre": "2 861"
+  },
+  {
+    "Code EPCI": 246000871,
+    "Libellé EPCI": "CC du Pays de Valois",
+    "Taux (en %)": "14,9",
+    "Nombre": "6 529"
+  },
+  {
+    "Code EPCI": 246000897,
+    "Libellé EPCI": "CC de la Plaine d'Estrées",
+    "Taux (en %)": "16,2",
+    "Nombre": "2 257"
+  },
+  {
+    "Code EPCI": 246000913,
+    "Libellé EPCI": "CC du Pays de Bray",
+    "Taux (en %)": "16,6",
+    "Nombre": "2 425"
+  },
+  {
+    "Code EPCI": 246000921,
+    "Libellé EPCI": "CC des Pays d'Oise et d'Halatte",
+    "Taux (en %)": "14,7",
+    "Nombre": "4 036"
+  },
+  {
+    "Code EPCI": 246200299,
+    "Libellé EPCI": "CA d'Hénin-Carvin",
+    "Taux (en %)": "17,3",
+    "Nombre": "17 022"
+  },
+  {
+    "Code EPCI": 246200364,
+    "Libellé EPCI": "CA de Lens - Liévin",
+    "Taux (en %)": "18,1",
+    "Nombre": "34 944"
+  },
+  {
+    "Code EPCI": 246200380,
+    "Libellé EPCI": "CC de la Terre des Deux Caps",
+    "Taux (en %)": "17,7",
+    "Nombre": "3 137"
+  },
+  {
+    "Code EPCI": 246200729,
+    "Libellé EPCI": "CA du Boulonnais",
+    "Taux (en %)": "17,9",
+    "Nombre": "16 758"
+  },
+  {
+    "Code EPCI": 246200844,
+    "Libellé EPCI": "CC de la Région d'Audruicq",
+    "Taux (en %)": "15,8",
+    "Nombre": "3 386"
+  },
+  {
+    "Code EPCI": 246201016,
+    "Libellé EPCI": "CC du Pays de Lumbres",
+    "Taux (en %)": "17,6",
+    "Nombre": "3 314"
+  },
+  {
+    "Code EPCI": 246201149,
+    "Libellé EPCI": "CA du Calaisis",
+    "Taux (en %)": "17,2",
+    "Nombre": "14 273"
+  },
+  {
+    "Code EPCI": 247600588,
+    "Libellé EPCI": "CC des Villes Soeurs (partie Hauts-de-France)",
+    "Taux (en %)": "24,6",
+    "Nombre": "3 105"
+  },
+  {
+    "Code EPCI": 248000499,
+    "Libellé EPCI": "CC du Val de Somme",
+    "Taux (en %)": "17,7",
+    "Nombre": "3 772"
+  },
+  {
+    "Code EPCI": 248000531,
+    "Libellé EPCI": "CA Amiens Métropole",
+    "Taux (en %)": "13,9",
+    "Nombre": "20 736"
+  },
+  {
+    "Code EPCI": 248000747,
+    "Libellé EPCI": "CC du Pays du Coquelicot",
+    "Taux (en %)": "19,7",
+    "Nombre": "4 572"
+  }
+]

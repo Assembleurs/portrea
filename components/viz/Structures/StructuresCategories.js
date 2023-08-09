@@ -88,51 +88,55 @@ const Map = ({ data, id, selectedThematique }) => {
     useEffect(() => {
       const initializeMap = async () => {
         const L = (await import('leaflet')).default;
-  
-        if (!map && typeof window !== 'undefined') {
+    
+        // Check if element with the given id exists in the DOM
+        if (!map && typeof window !== 'undefined' && document.getElementById(id)) {
           const newMap = L.map(id).setView([50.603354, 3.888334], 9);
-  
+    
           L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
               '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
               'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           }).addTo(newMap);
-  
+    
           setMap(newMap);
           setGroup(L.featureGroup().addTo(newMap));
         }
       };
-  
+    
       initializeMap();
-    }, [map, id]);
+    }, [map, id]);  // dependency array includes `id`
+    
   
     useEffect(() => {
       const addCircles = async () => {
         const L = (await import('leaflet')).default;
-  
+    
         if (data && map && group) {
           group.clearLayers();
-  
+    
           data
             .filter(feature => selectedThematique ? 
               feature.properties.thematiques.includes(selectedThematique) : true)
             .forEach(feature => {
               const { coordinates } = feature.geometry;
               const circle = L.circle([coordinates[1], coordinates[0]], circleRadius);
-  
-              // Here, we assume that feature.properties.nom holds the name of the structure
+    
               circle.bindPopup(feature.properties.nom);
-  
+    
               circle.addTo(group);
             });
-  
-          map.fitBounds(group.getBounds());
+    
+          if (group.getLayers().length > 0) {
+            map.fitBounds(group.getBounds());
+          } else {
+          }
         }
       };
-  
+    
       addCircles();
-    }, [map, data, selectedThematique, group]);
+    }, [map, data, selectedThematique, group]);    
   
     return <div id={id} style={{ height: "500px", width: "100%" }}></div>;
   };

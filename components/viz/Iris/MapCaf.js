@@ -211,27 +211,6 @@ const MapCaf = ({ code, id }) => {
         <span style={{ marginLeft: 10 }}>Pourcentage</span>
         </div>
       </label>
-      <label htmlFor="show-structures-switch">
-  <div style={{ display: 'flex', alignItems: 'center' }}>
-    <span style={{ marginRight: 10 }}>Cacher les structures</span>
-    <Switch 
-      onChange={handleShowStructuresChange} 
-      checked={showStructures} 
-      id="show-structures-switch"
-      onColor="#86d3ff"
-      onHandleColor="#2693e6"
-      handleDiameter={30}
-      uncheckedIcon={false}
-      checkedIcon={false}
-      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-      height={20}
-      width={48}
-      className="react-switch"
-    />
-    <span style={{ marginLeft: 10 }}>Afficher les structures</span>
-  </div>
-</label>
       <br></br>
       <div id="map" style={{ height: '400px' }}></div>
     </div>
