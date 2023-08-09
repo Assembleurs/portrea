@@ -79,17 +79,18 @@ const PlagesHoraires = ({ code }) => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <div>
+      <br></br>
+      <div style={{ width: '70%' }}>
         <Select options={dayOptions} onChange={handleDayChange} defaultValue={dayOptions[0]} />
         <div style={{ overflow: 'auto' }}>
         <BarChart
-          width={400}
+          width={600}
           height={300}
           data={horaires}
           margin={{
             top: 5,
             right: 30,
-            left: 20,
+            left: 30,
             bottom: 5,
           }}
         >
