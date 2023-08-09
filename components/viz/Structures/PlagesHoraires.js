@@ -73,7 +73,28 @@ const PlagesHoraires = ({ code }) => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-
+      <div>
+        <br></br>
+        <Select options={dayOptions} onChange={handleDayChange} defaultValue={dayOptions[0]} />
+        <div style={{ overflow: 'auto', width: '100%' }}>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart
+              data={horaires}
+              margin={{
+                top: 5,
+                right: 0,
+                left: 0,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="heure" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="count" fill="#69a297" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
       <div style={{ marginTop: '20px' }}>
