@@ -13,6 +13,7 @@ import styles from '../../styles/Territoire.module.css';
 import MapDiplome from '../../components/viz/Iris/MapDiplome';
 import ScoreContainer from '../../components/nav/ScoreContainer';
 import StructuresCategories from '../../components/viz/Structures/StructuresCategories';
+import Link from 'next/link';
 
 const MatchFs = dynamic(
   () => import('../../components/viz/FranceServices/MatchFs'),
@@ -23,7 +24,7 @@ const Territoire = () => {
   const router = useRouter();
   const { code } = router.query;
 
-  const [commune, setCommune] = useState(null);
+  const [commune, setCommune] = useState({nom: null, epci: null});
   const [selectedService, setSelectedService] = useState(null);
 
   const handleServiceSelection = (service) => {
@@ -32,15 +33,15 @@ const Territoire = () => {
 
   useEffect(() => {
     if (code) {
-      fetch(`https://geo.api.gouv.fr/communes?code=${code}&fields=nom,code,codesPostaux,siren,codeEpci,codeDepartement,codeRegion,population&format=json&geometry=centre`)
+      fetch(`https://geo.api.gouv.fr/communes?code=${code}&fields=nom,code,codesPostaux,siren,codeEpci,epci,codeDepartement,codeRegion,population&format=json&geometry=centre`)
         .then((res) => res.json())
         .then((data) => {
           if (data.length > 0) {
-            setCommune(data[0]);
+            setCommune({nom: data[0].nom, epci: data[0].epci.nom, codeEpci: data[0].codeEpci, code: data[0].code});
           }
         });
     }
-  }, [code]);
+  }, [code]);  
 
   useEffect(() => {
     if (commune) {
@@ -54,6 +55,11 @@ const Territoire = () => {
          {commune ? (
           <>
             <h1 className="commune-title">{commune.nom}</h1>
+            <h2 className="epci-name">
+              <Link href={`/epci/${commune.codeEpci}`}>
+                <a>{commune.epci}</a>
+              </Link>
+            </h2>  
             <ScoreContainer comcode={commune.code}/>
             <h1>🏘 Données socio-démographiques</h1>
             <div className={styles.grid}>

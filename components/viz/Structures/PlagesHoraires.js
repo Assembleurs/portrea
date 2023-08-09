@@ -1,50 +1,45 @@
 import React, { useEffect, useState } from 'react';
-import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
+import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer } from 'recharts';
 import Select from 'react-select';
 
 const DAYS = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
-const WEEK = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]; // Used for expanding days range
-const DAYS_FR = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]; // French days of the week
+const WEEK = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]; 
+const DAYS_FR = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]; 
 
 const PlagesHoraires = ({ code }) => {
   const [horaires, setHoraires] = useState([]);
   const [selectedDay, setSelectedDay] = useState(DAYS[0]);
-  const [nullScheduleStructures, setNullScheduleStructures] = useState([]); // Added state for tracking structures with null schedules
-  const [isButtonHovered, setIsButtonHovered] = useState(false); // Added state for button hover effect
+  const [nullScheduleStructures, setNullScheduleStructures] = useState([]); 
+  const [isButtonHovered, setIsButtonHovered] = useState(false); 
 
   useEffect(() => {
     fetch(`/api/structures/structures-inclusion?irisCode=${code}`)
       .then((res) => res.json())
       .then((data) => {
         const counts = {};
-        for (let i = 6; i < 22; i++) counts[i] = 0; // Initialize counts for each hour
-        let nullScheduleStructuresTemp = []; // Temporary array for structures with null schedules
+        for (let i = 6; i < 22; i++) counts[i] = 0; 
+        let nullScheduleStructuresTemp = []; 
 
         data.features.forEach((feature) => {
           const horaire = feature.properties.horaires_ouverture;
           if (horaire) {
             try {
-              // Parse opening hours
               const days = horaire.split("; ");
               days.forEach((day) => {
                 const dayParts = day.split(" ");
                 let daysOfWeek = dayParts[0].split("-");
-                // If multiple days are mentioned, expand them
                 if (daysOfWeek.length > 1) {
                   const start = WEEK.indexOf(daysOfWeek[0]);
                   const end = WEEK.indexOf(daysOfWeek[1]);
                   daysOfWeek = WEEK.slice(start, end + 1);
                 }
                 if (daysOfWeek.includes(selectedDay)) {
-                  // Multiple time ranges could be separated by ","
                   const timeRanges = dayParts[1].split(",");
                   timeRanges.forEach((timeRange) => {
-                    // Ignore non-standard comments
                     if (timeRange.includes(":")) {
                       const [start, end] = timeRange.split("-");
                       const startHour = parseInt(start.split(":")[0], 10);
                       const endHour = parseInt(end.split(":")[0], 10);
-                      // Increment count for each hour the structure is open
                       for (let i = startHour; i < endHour; i++) {
                         counts[i]++;
                       }
@@ -56,12 +51,11 @@ const PlagesHoraires = ({ code }) => {
               console.error(e);
             }
           } else {
-            // Add the structure's name to the array if schedule is null
             nullScheduleStructuresTemp.push(feature.properties.nom);
           }
         });
 
-        setNullScheduleStructures(nullScheduleStructuresTemp); // Set the final array of structures with null schedules
+        setNullScheduleStructures(nullScheduleStructuresTemp); 
 
         const horairesData = Object.keys(counts).map((heure) => ({
           heure: `${heure}:00`,
@@ -79,28 +73,28 @@ const PlagesHoraires = ({ code }) => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <br></br>
-      <div style={{ width: '70%' }}>
+      <div>
+        <br></br>
         <Select options={dayOptions} onChange={handleDayChange} defaultValue={dayOptions[0]} />
-        <div style={{ overflow: 'auto' }}>
-        <BarChart
-          width={600}
-          height={300}
-          data={horaires}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 30,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="heure" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="count" fill="#69a297" />
-        </BarChart>
+        <div style={{ overflow: 'auto', width: '100%' }}>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart
+              data={horaires}
+              margin={{
+                top: 5,
+                right: 0,
+                left: 0,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="heure" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="count" fill="#69a297" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
       <div style={{ marginTop: '20px' }}>

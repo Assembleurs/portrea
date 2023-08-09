@@ -81,7 +81,24 @@ img.next-image {
   color: rgb(255, 255, 255);
   font-size: 4em;
   background-color: #304d6d;
-  margin-bottom: 0.5rem;
   text-align: center;
-  width: 95%;
+  width: 100%;
+  font-weight: 900;
+}
+
+.epci-name {
+  text-align: center;
+  background-color: #304d6d;
+  color: #e0f2f9;
+  font-size: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  width: 100%;
+}
+
+.epci-name:hover {
+  background-color: #417ab3;
+  cursor: pointer;
+  color: white;
 }
