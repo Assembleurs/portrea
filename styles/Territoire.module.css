@@ -23,6 +23,30 @@
   margin-bottom: 20px; 
 }
 
+.dataInfoBox {
+  margin-top: 20px;
+  width: fit-content;
+  padding: 10px;
+  background-color: #ffffff; 
+  border-radius: 5px;
+  color: #717171;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0px 2px 4px rgb(228, 228, 228); 
+}
+
+.dataInfoBox a {
+  color: #252d80; 
+  text-decoration: underline;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: color 0.1s ease; 
+}
+
+.dataInfoBox a:hover {
+  color: #99e5f5; 
+}
+
 
 @media screen and (max-width: 600px) {
   .grid > div {

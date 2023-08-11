@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&display=swap');
+</style>
+
 const FragiliteScore = ({ comcode }) => {
   const [score, setScore] = useState(null);
 
@@ -34,7 +38,7 @@ const FragiliteScore = ({ comcode }) => {
   }, [comcode]);
 
   const boxStyle = {
-    backgroundColor: '#304d6d',
+    backgroundColor: '#252d80',
     borderRadius: '5px',
     padding: '20px',
     color: 'white'
@@ -49,9 +53,19 @@ const FragiliteScore = ({ comcode }) => {
   };
 
   const titleStyle = {
-    fontSize: '28px',
-    fontWeight: 'bold'
+    fontSize: '32px',
+    fontFamily: "'Big Shoulders Display', sans-serif"
   };
+
+  const infoBoxStyle = {
+    marginTop: '10px',
+    display: 'inline-block',
+    backgroundColor: '#252d80',
+    borderRadius: '5px',
+    color: '#ebebed',
+    textDecoration: 'underline',
+    cursor: 'pointer'
+};
 
   return (
     <div style={boxStyle}>
@@ -61,6 +75,9 @@ const FragiliteScore = ({ comcode }) => {
       ) : (
         <p>Chargement...</p>
       )}
+    💬 <a href="/docs/indicateurs#indicateurs-strategiques" style={infoBoxStyle} target="_blank">
+      Plus d'informations sur le calcul des scores
+    </a>
     </div>
   );
 };

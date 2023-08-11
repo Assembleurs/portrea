@@ -38,7 +38,7 @@ const Age = ({ comcode }) => {
     fontSize: '30px',
     fontWeight: 'bold',
     backgroundColor: 'white',  
-    padding: '10px'
+    padding: '10px',
   };
 
   const titleStyle = {

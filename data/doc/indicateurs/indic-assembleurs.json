@@ -1,0 +1,191 @@
+[
+  {
+    "Jeu de données": "Taux et nombre de personnes en situation d'illectronisme par EPCI dans les Hauts-de-France",
+    "Pour quel indicateur ?": "Taux d'illectronisme",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Disposer d'une estimation à l'échelle EPCI sur l'illectronisme",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "https://www.insee.fr/fr/statistiques/4986976#tableau-figure6",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Nombre et proportion d'allocataires",
+    "Pour quel indicateur ?": "Score d’exposition aux exigences numériques",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer le besoin en termes de démarches administratives, nécessaires pour ces publics",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "IRIS,Commune"
+  },
+  {
+    "Jeu de données": "Nombre et proportion de demandeurs d'emploi",
+    "Pour quel indicateur ?": "Score d’exposition aux exigences numériques",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer le besoin en termes de démarches administratives, nécessaires pour ces publics",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "IRIS,Commune"
+  },
+  {
+    "Jeu de données": "Nombre et proportion des plus de 65 ans",
+    "Pour quel indicateur ?": "Score de fragilité socio numérique",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Estimer la vulnérabilité induite par le nombre de personnes de plus de 65 ans",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "IRIS,Commune"
+  },
+  {
+    "Jeu de données": "Nombre et proportion des personnes sans diplômes ou peu diplomées",
+    "Pour quel indicateur ?": "Score de fragilité socio numérique",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Estimer la vulnérabilité induite par le nombre de personnes peu ou non diplômées",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "IRIS,Commune"
+  },
+  {
+    "Jeu de données": "Taux de pauvreté",
+    "Pour quel indicateur ?": "Score de fragilité socio numérique",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Estimer le taux d'équipement (matériel et abonnements) en fonction du taux de pauvreté",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "https://www.insee.fr/fr/statistiques/7233950#dictionnaire",
+    "Granularité géographique (choisie)": "IRIS,Commune"
+  },
+  {
+    "Jeu de données": "Détail des allocataires",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Cibler précisément les publics et adapter l'offre locale",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "IRIS,Commune"
+  },
+  {
+    "Jeu de données": "Détails des demandeurs d'emploi",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Cibler précisément les publics et adapter l'offre locale",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "IRIS,Commune"
+  },
+  {
+    "Jeu de données": "Détail de la structure de la population (CSP)",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Cibler précisément les publics et adapter l'offre locale",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "IRIS,Commune"
+  },
+  {
+    "Jeu de données": "Détails sur le revenu des ménages",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Cibler précisément les publics et adapter l'offre locale",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "IRIS,Commune"
+  },
+  {
+    "Jeu de données": "Dans quelles structures France Services se rendent les habitants de la commune ?",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Comprendre les flux, identifier les manques de structures au niveau local",
+    "Source de la donnée": "France Services",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune"
+  },
+  {
+    "Jeu de données": "De quelles communes proviennent les usagers d'une structure France Services ?",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Mesurer l'attraction d'une structure",
+    "Source de la donnée": "France Services",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune"
+  },
+  {
+    "Jeu de données": "Nombre de conseillers numériques par commune",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Avoir une idée des ressources humaines disponibles",
+    "Source de la donnée": "ANCT",
+    "Url source de la donnée": "https://fiches.incubateur.anct.gouv.fr/fiches/numerique/d%C3%A9partement/59",
+    "Granularité géographique (choisie)": "Commune"
+  },
+  {
+    "Jeu de données": "Origine et motifs des visiteurs des points d'information jeunesse",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Mieux connaître l'attraction des points d'info jeunesse et les demandes les plus usuelles.",
+    "Source de la donnée": "CRIG",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune"
+  },
+  {
+    "Jeu de données": "Nombre de structures ouvertes selon les plages horaires et les jours",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Identifier et comparer les plages d'ouvertures et les manques éventuels",
+    "Source de la donnée": "data.gouv.fr",
+    "Url source de la donnée": "https://www.data.gouv.fr/fr/datasets/lieux-de-mediation-numerique-sur-le-territoire-national-fournis-par-data-inclusion-1/",
+    "Granularité géographique (choisie)": "Commune"
+  },
+  {
+    "Jeu de données": "Indicateurs de qualité des services publics (impôts, france services, pôle emploi...) -  (en réflexion)",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Connaître le taux de réponse mail en 48h, le nombre de personnes par accompagnement, le taux de démarches réalisées en une seule fois, etc...",
+    "Source de la donnée": "DITP",
+    "Url source de la donnée": "https://opendata.plus.transformation.gouv.fr/explore/dataset/export-resultats/table/",
+    "Granularité géographique (choisie)": "Lieux précis ou structure"
+  },
+  {
+    "Jeu de données": "Nombre d'aidants par commune, via le dispositif Aidants Connect (en réflexion)",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Avoir une idée des ressources humaines disponibles",
+    "Source de la donnée": "Aidants Connect",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune"
+  },
+  {
+    "Jeu de données": "Taux d'équipement des structures (connexion et matériel)",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Mesurer précisément les moyens matériels au niveau local",
+    "Source de la donnée": "À définir",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Lieux précis ou structure"
+  },
+  {
+    "Jeu de données": "Taux d'équipement de la population (en réflexion)",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Collecter une donnée qui n'existe pas par ailleurs",
+    "Source de la donnée": "À définir",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune"
+  },
+  {
+    "Jeu de données": "Niveau d'aisance numérique de la population (en réflexion)",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Collecter une donnée qui n'existe pas par ailleurs",
+    "Source de la donnée": "À définir",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune"
+  },
+  {
+    "Jeu de données": "Nombre de personnes formées au numérique qui accompagnent les publics dans les structrures (en réflexion)",
+    "Pour quel indicateur ?": "Données spécifiques",
+    "Objet de l'information": "Opérationnel",
+    "Objectif": "Mesurer précisément les moyens humains au niveau local",
+    "Source de la donnée": "À définir",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune"
+  }
+]
