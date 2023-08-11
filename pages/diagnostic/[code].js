@@ -61,7 +61,13 @@ const Territoire = () => {
               </Link>
             </h2>  
             <ScoreContainer comcode={commune.code}/>
-            <h1>🏘 Données socio-démographiques</h1>
+            <h2 className='subtitle'>🏘 Données socio-démographiques</h2>
+            <div className={styles.dataInfoBox}>
+             💬 Pourquoi ces données ?
+              <a href="/docs/indicateurs#indicateurs-operationnels" target="_blank" rel="noopener noreferrer">
+                Consulter la documentation
+              </a>
+            </div>
             <div className={styles.grid}>
             <ComponentContainer 
               title="📊 Données démographiques et CSP" 

@@ -1,0 +1,92 @@
+[
+  {
+    "Jeu de données": "Part des locaux raccordables FttH (fibre optique)",
+    "Pour quel indicateur ?": "Accès aux interfaces numériques",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer la difficulté d'accès au réseau",
+    "Source de la donnée": "ARCEP",
+    "Url source de la donnée": "https://www.observatoire-des-territoires.gouv.fr/part-des-locaux-raccordables-ftth-fibre-optique",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Part des zones blanches (Data + voix) dans la superficie totale",
+    "Pour quel indicateur ?": "Accès aux interfaces numériques",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer la difficulté d'accès au réseau",
+    "Source de la donnée": "ARCEP",
+    "Url source de la donnée": "https://www.observatoire-des-territoires.gouv.fr/part-de-la-surface-couverte-en-4g-par-minima-un-operateur",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Taux de pauvreté monétaire",
+    "Pour quel indicateur ?": "Accès aux interfaces numériques",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer l'équipement des ménages",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "https://www.observatoire-des-territoires.gouv.fr/taux-de-pauvrete-seuil-60-du-revenu-median",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Revenu disponible par ménage",
+    "Pour quel indicateur ?": "Accès aux interfaces numériques",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer l'équipement des ménages",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "https://www.observatoire-des-territoires.gouv.fr/mediane-du-revenu-disponible-par-uc",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Part de la population des plus 75 ans ou plus vivant seuls",
+    "Pour quel indicateur ?": "Accès à l’information et aux services publics",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer l'isolement des seniors",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "https://www.observatoire-des-territoires.gouv.fr/part-des-personnes-de-75-ans-et-plus-vivant-seules",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Part des ménages sans voiture",
+    "Pour quel indicateur ?": "Accès à l’information et aux services publics",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer les difficultés de déplacement",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "https://www.observatoire-des-territoires.gouv.fr/part-des-menages-disposant-dau-moins-une-voiture",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Temps d'accès aux soins",
+    "Pour quel indicateur ?": "Accès à l’information et aux services publics",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer l'accessibilité aux services publics",
+    "Source de la donnée": "Région HdF",
+    "Url source de la donnée": "https://cartes.hautsdefrance.fr/node/1764",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Temps d'accès moyen aux services publics",
+    "Pour quel indicateur ?": "Accès à l’information et aux services publics",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer l'accessibilité aux services publics",
+    "Source de la donnée": "Région HdF",
+    "Url source de la donnée": "https://cartes.hautsdefrance.fr/node/1739",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Temps d'accès moyens aux lieux avec acquisition de compétences numériques",
+    "Pour quel indicateur ?": "Accès à l’information et aux services publics",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer l'accessibilité des lieux de médiation numérique",
+    "Source de la donnée": "Région HdF",
+    "Url source de la donnée": "https://cartes.hautsdefrance.fr/node/1741",
+    "Granularité géographique (choisie)": "EPCI"
+  },
+  {
+    "Jeu de données": "Temps moyen d'accès au lieu avec accompagnement aux démarches le plus proche",
+    "Pour quel indicateur ?": "Accès à l’information et aux services publics",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer l'accessibilité des lieux de médiation numérique",
+    "Source de la donnée": "Région HdF",
+    "Url source de la donnée": "https://cartes.hautsdefrance.fr/node/1740",
+    "Granularité géographique (choisie)": "EPCI"
+  }
+]

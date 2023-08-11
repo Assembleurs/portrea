@@ -14,6 +14,7 @@
   align-items: center;
   gap: 10px;
   width: 95%;
+  font-size: 14px;
 }
 
 .sub-score-container {
@@ -27,7 +28,7 @@
   .sub-score-container {
     flex-direction: row;
     justify-content: space-around;
-    background-color: #304d6d;
+    background-color: #252d80;
   }
 
   .score-container {

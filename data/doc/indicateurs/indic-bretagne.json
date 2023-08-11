@@ -1,0 +1,38 @@
+[
+  {
+    "Jeu de données": "Nombre de personnes de plus de 65 ans",
+    "Pour quel indicateur ?": "Score de fragilité socio numérique",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer les facteurs de non-connexion",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune,IRIS"
+  },
+  {
+    "Jeu de données": "Nombre de personnes personnes « sans diplôme ou Cep » de moins de 65 ans.",
+    "Pour quel indicateur ?": "Score de fragilité socio numérique",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer les facteurs de non-connexion",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune,IRIS"
+  },
+  {
+    "Jeu de données": "Nombre de bénéficiaires de minima sociaux (RSA, PPA, AAH)",
+    "Pour quel indicateur ?": "Score d’exposition aux exigences numériques",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer le besoin en termes de démarches administratives, nécessaires pour ces publics",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune,IRIS"
+  },
+  {
+    "Jeu de données": "Nombre de demandeurs d'emplois",
+    "Pour quel indicateur ?": "Score d’exposition aux exigences numériques",
+    "Objet de l'information": "Stratégique",
+    "Objectif": "Evaluer le besoin en termes de démarches administratives, nécessaires pour ces publics",
+    "Source de la donnée": "INSEE",
+    "Url source de la donnée": "",
+    "Granularité géographique (choisie)": "Commune,IRIS"
+  }
+]
