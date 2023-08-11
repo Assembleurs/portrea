@@ -23,8 +23,9 @@ h1 {
   font-family: 'Big Shoulders Display';
 }
 h2 {
-  font-variation-settings: 'wght' 400;
-  font-size: 18px;
+  font-variation-settings: 'wght' 800;
+  font-size: 40px;
+  font-family: 'Big Shoulders Display';
 }
 
 @media screen and (min-device-pixel-ratio: 1.5),

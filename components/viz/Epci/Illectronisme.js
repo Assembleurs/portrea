@@ -20,7 +20,7 @@ const Illectronisme = ({ codeEPCI }) => {
   return (
     <div>
       <br></br>
-      <h2>Taux d'illectronisme : </h2>
+      <h3>Taux d'illectronisme : </h3>
       <div className={styles.tauxBox}>
         <p>{data["Taux (en %)"]}</p>
       </div>
@@ -29,7 +29,7 @@ const Illectronisme = ({ codeEPCI }) => {
         <div className={styles.regionalAverage} style={{ left: `${regionalAverage}%` }}></div>
       </div>
       <p className={styles.averageText}>Moyenne en Hauts de France</p>
-      <h2>Nombre de personnes</h2>
+      <h3>Nombre de personnes</h3>
       <div className={styles.numberBox}>
         <p>{data["Nombre"]}</p>
       </div>
