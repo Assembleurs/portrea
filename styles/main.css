@@ -18,13 +18,13 @@ h6 {
   font-variation-settings: 'wght' 650;
 }
 h1 {
-  font-variation-settings: 'wght' 850;
+  font-variation-settings: 'wght' 800;
   font-size: 40px;
   font-family: 'Big Shoulders Display';
 }
 h2 {
-  font-variation-settings: 'wght' 800;
-  font-size: 40px;
+  font-weight: 800;
+  font-size: 36px;
   font-family: 'Big Shoulders Display';
 }
 
@@ -63,6 +63,13 @@ img.next-image {
   text-align: center;
   color: #333;
   font-size: 2rem;
+  margin-top: 2rem;
+  font-family: 'Big Shoulders Display';
+}
+
+.subtitle {
+  color: #000000;
+  font-size: 36px;
   margin-top: 2rem;
   font-family: 'Big Shoulders Display';
 }

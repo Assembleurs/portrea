@@ -5,6 +5,13 @@
   margin-top: 2rem;
 }
 
+.subtitle {
+  color: #000000;
+  font-size: 36px;
+  margin-top: 2rem;
+  font-family: 'Big Shoulders Display';
+}
+
 .loading {
   text-align: center;
   font-size: 1.25rem;
