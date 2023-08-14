@@ -5,6 +5,7 @@ import GoButton from '../components/nav/GoButton';
 import Layout from '../components/Layout'
 
 const Recherche = () => {
+  const [hovered, setHovered] = useState(false);
   const [communes, setCommunes] = useState([]);
   const [selectedCommune, setSelectedCommune] = useState(null);
 
@@ -14,6 +15,12 @@ const Recherche = () => {
       .then(setCommunes);
   }, []);
 
+  const linkStyle = {
+    textDecoration: 'none',
+    color: hovered ? '#0077b6' : 'inherit', 
+    transition: 'color 0.1s ease' 
+  };
+
   return (
     <Layout>
     <div
@@ -22,6 +29,7 @@ const Recherche = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        paddingBottom: '12rem',
         minHeight: '100vh',
         background: 'linear-gradient(to bottom, #caf0f8, #fde2e4)'
       }}
@@ -39,6 +47,24 @@ const Recherche = () => {
           <GoButton commune={selectedCommune} />
         </div>
       )}
+    <div style={{ marginTop: '50px', width: '60%', padding: '20px', background: '#fafcfc', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0,0,0,0.1)' }}>
+        <h2 style={{ fontSize: '30px', marginBottom: '20px' }}>
+          <a 
+            href="/docs/demarche" 
+            style={linkStyle}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            En savoir plus sur la démarche
+          </a>
+          </h2>
+        <p style={{ fontSize: '18px' }}>
+          Portrea est une initiative pilotée par Les Assembleurs et dédiée aux communes des Hauts-de-France. Son objectif est de faciliter la lutte contre le non recours aux droits, en permettant de mieux diagnostiquer la vulnérabilité des populations en matière d'e-administration. 
+          <br />
+          <br />
+          🔎 Explorez les indicateurs, consultez les guides, et découvrez comment cette démarche peut améliorer votre stratégie de médiation numérique.
+        </p>
+      </div>
     </div>
     </Layout>
   );
