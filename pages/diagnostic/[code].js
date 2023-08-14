@@ -95,7 +95,7 @@ const Territoire = () => {
               </ComponentContainer>
             </div>
             <br></br>
-            <h1>🇫🇷 Fréquentation des structures France Services</h1>
+            <h2 className='subtitle'>🇫🇷 Fréquentation des structures France Services</h2>
             <div className={styles.grid}>
               <ComponentContainer title="🗺 Origine des usagers France Services" description="De quelles communes proviennent les usagers des structures France Services ?">
               <MatchFs code={code} />
@@ -106,7 +106,7 @@ const Territoire = () => {
               </div>
               <br></br>
               <div>
-            <h1>👩🏽‍💻 Données sur l'offre en médiation numérique</h1>
+              <h2 className='subtitle'>👩🏽‍💻 Données sur l'offre en médiation numérique</h2>
             <div className={styles.grid}>
               <ComponentContainer title="📍 Localisation des structures" description="Présence des structures selon les accompagnements proposés">
               <StructuresCategories irisCode={code} id="StructuresCategories" />

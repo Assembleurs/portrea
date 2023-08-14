@@ -23,8 +23,8 @@ h1 {
   font-family: 'Big Shoulders Display';
 }
 h2 {
-  font-weight: 800;
-  font-size: 36px;
+  font-variation-settings: 'wght' 800;
+  font-size: 40px;
   font-family: 'Big Shoulders Display';
 }
 
