@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;800&display=swap');
+</style>
+
 export default function Layout({ children }) {
   const [isSearchHovered, setIsSearchHovered] = useState(false);
   const [isDocsHovered, setIsDocsHovered] = useState(false);
@@ -23,13 +27,14 @@ export default function Layout({ children }) {
           borderBottom: '8px solid #252d80', 
           padding: '20px 0', 
           marginBottom: '0rem', 
-          fontFamily: 'Big Shoulders Display' 
+          fontFamily: 'Big Shoulders Display',
+          fontWeight: '800'
         }}>
-        <div style={{ display: 'flex', alignItems: 'center', fontSize: '2rem', fontWeight: 'bold' }}>
+        <div style={{ display: 'flex', alignItems: 'center', fontSize: '2rem', fontWeight: '800' }}>
           <img src="/images/logo-assembleurs.png" alt="Portrea Logo" style={{ marginRight: '0px', height: '40px', width: 'auto' }} />
           PORTREA HAUTS-DE-FRANCE
         </div>
-        <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '2rem', fontWeight: '800' }}>
           <Link href="/">
             <a
               style={searchLinkStyle}
@@ -40,7 +45,7 @@ export default function Layout({ children }) {
             </a>
           </Link>
         </div>
-        <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '2rem', fontWeight: '800' }}>
           <Link href="/docs/indicateurs">
             <a
               style={docsLinkStyle}
