@@ -54,7 +54,7 @@ function getColorForIndicator(indicator) {
     return colors[indicator] || "#FFFFFF"; // couleur par défaut si l'indicateur n'est pas dans la liste
 }
 
-export default function Documentation() {
+export default function Indicateurs() {
     return (
         <Layout>
             <div className={styles.container}>
@@ -68,7 +68,7 @@ export default function Documentation() {
                 Pour cela, nous sommes partis de deux initiatives existantes : <a className={styles.link} href="https://portrea.fr/" target="_blank" rel="noopener noreferrer">Portrea mené par le TiLab en Bretagne</a>, et <a className={styles.link} href="https://2040.hautsdefrance.fr/un-indice-de-fragilite-numerique/" target="_blank" rel="noopener noreferrer">l'indice de fragilité numérique (Région Hauts-de-France)</a>
                 </p>
 
-                <h2 className={styles.subtitle}>Données utilisées en Région Hauts-de-France</h2>
+                <h2 id="hdf" className={styles.subtitle}>Données utilisées en Région Hauts-de-France</h2>
 
                 <TableauIndicateurs data={hdf} />
 
@@ -85,7 +85,7 @@ export default function Documentation() {
                     </button>
                 </a>
 
-                <h2 className={styles.subtitle}>Données utilisées par le TiLab (Bretagne)</h2>
+                <h2 id="bretagne" className={styles.subtitle}>Données utilisées par le TiLab (Bretagne)</h2>
 
                 <TableauIndicateurs data={bretagne} />
 
@@ -114,7 +114,7 @@ export default function Documentation() {
                     <li>Indicateurs opérationnels</li>
                 </ul>
 
-                <h2 id="indicateurs-strategiques" className={styles.thirdtitle}>Indicateurs stratégiques</h2>
+                <h3 id="indicateurs-strategiques" className={styles.thirdtitle}>Indicateurs stratégiques</h3>
                  <p>
                     Ils reprennent les indicateurs utilisés en Bretagne par le TiLab : <b>score d’exposition aux exigences numériques, et score de fragilité socio numérique. </b>
                     Leur calcul est identique, mais à ce jour il est réalisé à partir de la somme des individus de chaque IRIS (en cours de modification, pour prendre le chiffre à l'échelle de la commune directement).
@@ -135,7 +135,7 @@ export default function Documentation() {
                     </div>
                  </p>
 
-                 <h2 id="indicateurs-operationnels" className={styles.thirdtitle}>Indicateurs opérationnels</h2>
+                 <h3 id="indicateurs-operationnels" className={styles.thirdtitle}>Indicateurs opérationnels</h3>
 
                     <p>Il s'agit de données précises à la fois sur les populations (allocations, emploi, formation, CSP), sur les structures de médiation numérique et sur les flux d'usagers France Services.</p>
                     <br></br>
@@ -152,6 +152,7 @@ export default function Documentation() {
                         À ce jour, certaines données sont en cours d'acquisition, elles sont intégrées progressivement à l'outil de diagnostic.
                     </div>
                     </p>
+                    <br></br>
 
                 <TableauIndicateurs data={assembleurs} />
 

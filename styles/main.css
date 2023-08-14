@@ -23,8 +23,8 @@ h1 {
   font-family: 'Big Shoulders Display';
 }
 h2 {
-  font-variation-settings: 'wght' 800;
   font-size: 40px;
+  font-weight: 800;
   font-family: 'Big Shoulders Display';
 }
 
@@ -62,6 +62,7 @@ img.next-image {
 .title {
   text-align: center;
   color: #333;
+  font-weight: 800;
   font-size: 2rem;
   margin-top: 2rem;
   font-family: 'Big Shoulders Display';
@@ -70,6 +71,7 @@ img.next-image {
 .subtitle {
   color: #000000;
   font-size: 36px;
+  font-weight: 800;
   margin-top: 2rem;
   font-family: 'Big Shoulders Display';
 }
