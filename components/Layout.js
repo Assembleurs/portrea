@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;800&display=swap');
+</style>
+
 export default function Layout({ children }) {
   const [isSearchHovered, setIsSearchHovered] = useState(false);
   const [isDocsHovered, setIsDocsHovered] = useState(false);
@@ -41,7 +45,7 @@ export default function Layout({ children }) {
             </a>
           </Link>
         </div>
-        <div style={{ fontSize: '2rem', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '2rem', fontWeight: '800' }}>
           <Link href="/docs/indicateurs">
             <a
               style={docsLinkStyle}
