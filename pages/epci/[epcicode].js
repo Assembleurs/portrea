@@ -42,7 +42,7 @@ const EpciPage = () => {
             <ComponentContainer
              title="⌨️ Accès à l'équipement" 
              description="Données collectées par la collectivité"
-             dataInfo="">
+             dataInfo="/docs/sources-donnees-locales/#equipement-structures">
             <EquipementStructures codeEPCI={epci.code} />
             </ComponentContainer>
             </div>

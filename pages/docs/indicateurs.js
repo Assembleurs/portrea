@@ -136,7 +136,7 @@ export default function Indicateurs() {
                  </p>
 
                  <h3 id="indicateurs-operationnels" className={styles.thirdtitle}>Indicateurs opérationnels</h3>
-
+                    
                     <p>Il s'agit de données précises à la fois sur les populations (allocations, emploi, formation, CSP), sur les structures de médiation numérique et sur les flux d'usagers France Services.</p>
                     <br></br>
                     <br></br>
@@ -147,15 +147,14 @@ export default function Indicateurs() {
                     Grâce à l'affichage des structures sur la même cartographie, on peut observer par exemple le nombre de personnes percevant l'allocation adulte handicapé, ou bien le nombre de personnes immigrées. 
                     <b> L'objectif : permettre aux structures d'adapter leur offre grâce à une meilleure connaissance des publics environnants.</b>
                     </blockquote>
+                    <br></br>
                     <p>
                     <div className={styles.hint}>
-                        À ce jour, certaines données sont en cours d'acquisition, elles sont intégrées progressivement à l'outil de diagnostic.
+                        À ce jour, certaines données sont <b>en cours d'acquisition</b>, elles sont intégrées progressivement à l'outil de diagnostic.
                     </div>
-                    </p>
-                    <br></br>
-
+                
                 <TableauIndicateurs data={assembleurs} />
-
+                </p>
             </div>
         </Layout>
     );

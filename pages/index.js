@@ -47,8 +47,8 @@ const Recherche = () => {
           <GoButton commune={selectedCommune} />
         </div>
       )}
-    <div style={{ marginTop: '50px', width: '60%', padding: '20px', background: '#fafcfc', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0,0,0,0.1)' }}>
-        <h2 style={{ fontSize: '30px', marginBottom: '20px' }}>
+    <div style={{ marginTop: '60px', width: '50%', padding: '20px', background: '#fafcfc', borderRadius: '8px', boxShadow: '0px 0px 2px rgba(0,0,0,0.1)' }}>
+        <h2 style={{ fontSize: '28px', marginBottom: '20px' }}>
           <a 
             href="/docs/demarche" 
             style={linkStyle}
@@ -58,11 +58,11 @@ const Recherche = () => {
             En savoir plus sur la démarche
           </a>
           </h2>
-        <p style={{ fontSize: '18px' }}>
+        <p style={{ fontSize: '16px' }}>
           Portrea est une initiative pilotée par Les Assembleurs et dédiée aux communes des Hauts-de-France. Son objectif est de faciliter la lutte contre le non recours aux droits, en permettant de mieux diagnostiquer la vulnérabilité des populations en matière d'e-administration. 
           <br />
           <br />
-          🔎 Explorez les indicateurs, consultez les guides, et découvrez comment cette démarche peut améliorer votre stratégie de médiation numérique.
+          📊 Explorez les indicateurs, 📕 consultez les guides, et découvrez comment cette démarche peut améliorer votre stratégie de médiation numérique.
         </p>
       </div>
     </div>

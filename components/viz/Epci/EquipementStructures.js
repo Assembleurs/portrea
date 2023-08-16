@@ -1,6 +1,6 @@
 import React from 'react';
 import equipementStructuresData from '../../../data/epci/equipement-structures.json';
-import styles from '../../../styles/Illectronisme.module.css'; // You may need to adapt these styles
+import styles from '../../../styles/Illectronisme.module.css'; 
 
 const EquipementStructures = ({ codeEPCI }) => {
   // Convert codeEPCI to an integer
@@ -10,22 +10,30 @@ const EquipementStructures = ({ codeEPCI }) => {
   const data = equipementStructuresData.find((item) => item["code-epci"] === codeEPCIInt);
 
   if (!data) {
-    return <p>No data available for this EPCI code.</p>;
-  }
+    const handleAddDataClick = () => {
+      window.location.href = "/docs/sources-donnees-locales#equipement-structures";
+    };
+    return (
+      <div className={styles.noData}>
+        <p>Aucune données pour cette collectivité</p>
+        <button className={styles.addButton} onClick={handleAddDataClick}>Ajoutez les données de votre EPCI</button>
+      </div>
+    );
+}
 
   const totalStructures = parseInt(data["nombre-structures"], 10);
   const equipementTaux = (parseInt(data["nombre-structures-acces-equipement"], 10) / totalStructures) * 100;
   const venteTaux = (parseInt(data["nombre-structures-vente-solidaire"], 10) / totalStructures) * 100;
-
+  
   return (
     <div>
       <br></br>
-      <h2>Nombre de structures proposant un accès libre à de l'équipement ou une connexion</h2>
+      <h3>Nombre de structures proposant un accès libre à de l'équipement ou une connexion</h3>
       <div className={styles.barContainer}>
         <div className={styles.bar} style={{ width: `${equipementTaux}%` }}></div>
       </div>
       <br></br>
-      <h2>Nombre de structures qui proposent de la vente solidaire / don ou prêt de matériel numérique:</h2>
+      <h3>Nombre de structures qui proposent de la vente solidaire / don ou prêt de matériel numérique:</h3>
       <div className={styles.barContainer}>
         <div className={styles.bar} style={{ width: `${venteTaux}%` }}></div>
       </div>

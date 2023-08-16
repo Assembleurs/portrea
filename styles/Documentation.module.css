@@ -36,6 +36,14 @@
     font-family: 'Big Shoulders Display';
 }
 
+.fourthtitle {
+    font-size: 1.3em;
+    color: #1f4f7a;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-family: 'Big Shoulders Display';
+}
 
 .text {
     font-size: 1em;
@@ -96,6 +104,7 @@
     overflow-x: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    background-color: white;
 }
 
 .table {
@@ -157,5 +166,93 @@
     margin: 20px 0;
     border-radius: 8px;
     background-color: #f9fcfe;
+    font-weight: bold;
+}
+
+.jsonSnippetContainer code {
+    white-space: pre;
+}
+
+.jsonSnippetContainer {
+    position: relative;
+    background-color: #252d80;
+    color: #99e5f5;
+    border-radius: 5px;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    max-width: 600px; 
+    overflow-x: auto; 
+  }
+  
+  .jsonSnippetContainer::before {
+    content: "Copier";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    background-color: #ffff;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
+  }
+  
+  .jsonSnippetContainer::before:hover {
+    background-color: #61dafb;
+    color: #282c34;
+  }
+  
+  .code {
+    white-space: pre;
+}
+
+.searchContainer {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.searchInput:focus {
+    border-color: #0070f3;
+}
+
+.resultsList {
+    margin-top: 10px;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+}
+
+.resultItem {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.resultItem:hover {
+    background-color: #f7f7f7;
+}
+
+.selectedEpci {
+    margin-top: 20px;
+    color: #0070f3;
     font-weight: bold;
 }
