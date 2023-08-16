@@ -97,10 +97,16 @@ const Territoire = () => {
             <br></br>
             <h2 className='subtitle'>🇫🇷 Fréquentation des structures France Services</h2>
             <div className={styles.grid}>
-              <ComponentContainer title="🗺 Origine des usagers France Services" description="De quelles communes proviennent les usagers des structures France Services ?">
+              <ComponentContainer 
+              title="🗺 Origine des usagers France Services" 
+              description="De quelles communes proviennent les usagers des structures France Services ?"
+              dataInfo="https://www.france-services.caissedesdepots.fr/">
               <MatchFs code={code} />
               </ComponentContainer>
-              <ComponentContainer title="📍 Destinations des usagers France Services" description="Structures France Services dans lesquelles se rendent les habitants de la commune.">
+              <ComponentContainer 
+              title="📍 Destinations des usagers France Services" 
+              description="Structures France Services dans lesquelles se rendent les habitants de la commune."
+              dataInfo="https://www.france-services.caissedesdepots.fr/">
               <DestinationsFs code={code} />
               </ComponentContainer>
               </div>
@@ -108,10 +114,16 @@ const Territoire = () => {
               <div>
               <h2 className='subtitle'>👩🏽‍💻 Données sur l'offre en médiation numérique</h2>
             <div className={styles.grid}>
-              <ComponentContainer title="📍 Localisation des structures" description="Présence des structures selon les accompagnements proposés">
+              <ComponentContainer 
+              title="📍 Localisation des structures" 
+              description="Présence des structures selon les accompagnements proposés"
+              dataInfo="https://www.data.gouv.fr/fr/datasets/lieux-de-mediation-numerique-sur-le-territoire-national-fournis-par-data-inclusion-1/">
               <StructuresCategories irisCode={code} id="StructuresCategories" />
               </ComponentContainer>
-              <ComponentContainer title="🕐 Plages horaires des structures" description="Nombre de structures ouvertes dans la commune selon les jours et les heures.">
+              <ComponentContainer 
+              title="🕐 Plages horaires des structures" 
+              description="Nombre de structures ouvertes dans la commune selon les jours et les heures."
+              dataInfo="https://www.data.gouv.fr/fr/datasets/lieux-de-mediation-numerique-sur-le-territoire-national-fournis-par-data-inclusion-1/">
               <PlagesHoraires code={code} />
               </ComponentContainer>
               </div>
