@@ -13,6 +13,7 @@ import styles from '../../styles/Territoire.module.css';
 import MapDiplome from '../../components/viz/Iris/MapDiplome';
 import ScoreContainer from '../../components/nav/ScoreContainer';
 import StructuresCategories from '../../components/viz/Structures/StructuresCategories';
+import IfnButton from '../../components/viz/Scores/Ifn';
 import Link from 'next/link';
 
 const MatchFs = dynamic(
@@ -60,8 +61,19 @@ const Territoire = () => {
                 <a>{commune.epci}</a>
               </Link>
             </h2>  
+            <IfnButton code={commune.code} />
+            <details>
+            <summary className='subtitle'>📊 Chiffres clés</summary>
+            <div className={styles.dataInfoBox}>
+            💬 Ces scores représentent le nombre de personnes potentiellement vulnérables, et / ou concernées en matière de démarches en ligne.
+             <a href="/docs/indicateurs#indicateurs-strategiques" target="_blank" rel="noopener noreferrer">
+                En savoir plus
+              </a>
+             </div>
             <ScoreContainer comcode={commune.code}/>
-            <h2 className='subtitle'>🏘 Données socio-démographiques</h2>
+            </details>
+            <details>
+            <summary className='subtitle'>🏘 Données socio-démographiques détaillées</summary>
             <div className={styles.dataInfoBox}>
              💬 Pourquoi ces données ?
               <a href="/docs/indicateurs#indicateurs-operationnels" target="_blank" rel="noopener noreferrer">
@@ -94,8 +106,9 @@ const Territoire = () => {
                 <MapDiplome code={code} id="mapDiplome" />
               </ComponentContainer>
             </div>
-            <br></br>
-            <h2 className='subtitle'>🇫🇷 Fréquentation des structures France Services</h2>
+            </details>
+            <details>
+            <summary className='subtitle'>🇫🇷 Fréquentation des structures France Services</summary>
             <div className={styles.grid}>
               <ComponentContainer 
               title="🗺 Origine des usagers France Services" 
@@ -111,8 +124,10 @@ const Territoire = () => {
               </ComponentContainer>
               </div>
               <br></br>
+              </details>
               <div>
-              <h2 className='subtitle'>👩🏽‍💻 Données sur l'offre en médiation numérique</h2>
+              <details>
+              <summary className='subtitle'>👩🏽‍💻 Données sur l'offre en médiation numérique</summary>
             <div className={styles.grid}>
               <ComponentContainer 
               title="📍 Localisation des structures" 
@@ -127,6 +142,7 @@ const Territoire = () => {
               <PlagesHoraires code={code} />
               </ComponentContainer>
               </div>
+              </details>
             </div>
           </>
         ) : (
