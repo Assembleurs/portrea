@@ -14,6 +14,7 @@ import MapDiplome from '../../components/viz/Iris/MapDiplome';
 import ScoreContainer from '../../components/nav/ScoreContainer';
 import StructuresCategories from '../../components/viz/Structures/StructuresCategories';
 import IfnButton from '../../components/viz/Scores/Ifn';
+import Cnum from '../../components/viz/FranceServices/Cnum';
 import Link from 'next/link';
 
 const MatchFs = dynamic(
@@ -140,6 +141,12 @@ const Territoire = () => {
               description="Nombre de structures ouvertes dans la commune selon les jours et les heures."
               dataInfo="https://www.data.gouv.fr/fr/datasets/lieux-de-mediation-numerique-sur-le-territoire-national-fournis-par-data-inclusion-1/">
               <PlagesHoraires code={code} />
+              </ComponentContainer>
+              <ComponentContainer
+               title="Conseillers numériques"
+               description="Nombre de conseillers numériques dans la commune (septembre 2023)"
+               dataInfo="https://metabase.conseiller-numerique.gouv.fr/public/dashboard/446208c4-cae2-4c0c-be19-44cb14ce7d06?en_date_du___=2023-07-25">
+              <Cnum code={commune.code} />
               </ComponentContainer>
               </div>
               </details>
