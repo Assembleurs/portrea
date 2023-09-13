@@ -1,26 +1,66 @@
 .container {
-    padding: 1rem;
-    border-radius: 5px;
-    background-color: white;
-  }
-  
-  .dataBox {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  
-  .box {
-    flex: 1;
-    padding: 1rem;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .number {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.dataBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem; 
+}
+
+.box {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.structuresbox {
+  display: flex;
+  flex-direction: column; 
+  align-items: stretch;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #ffffff;  
+}
+
+.structuresnumber {
+  flex: 0.5;
+  text-align: left;
+  margin-bottom: 10px; 
+}
+
+.percentageBarContainer {
+  background-color: #e1e1e1;
+  height: 20px;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px; 
+}
+
+.percentageBar {
+  background-color: #252d80;
+  height: 100%;
+  border-radius: 4px;
+  text-align: right;
+  padding-right: 10px;
+  color: white;
+  line-height: 20px;
+  width: 0;
+}
+
+.explanationText {
+  color: #555;
+  font-size: 16px;
+  margin-top: 10px;
+  font-style: italic;
+}
