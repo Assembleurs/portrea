@@ -5,6 +5,7 @@ import Illectronisme from '../../components/viz/Epci/Illectronisme';
 import ComponentContainer from '../../components/nav/ComponentContainer';
 import styles from '../../styles/Territoire.module.css';
 import EquipementStructures from '../../components/viz/Epci/EquipementStructures';
+import IfnEpciButton from '../../components/viz/Scores/IfnEpci'
 
 const EpciPage = () => {
   const router = useRouter();
@@ -32,6 +33,7 @@ const EpciPage = () => {
         {epci.nom ? (
           <>
             <h1 className="commune-title">{epci.nom}</h1>
+            <IfnEpciButton code={epci.code} />
             <div className={styles.grid}>
             <ComponentContainer
              title="🖥 Personnes en situation d'illectronisme" 
