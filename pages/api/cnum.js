@@ -18,6 +18,7 @@ export default async (req, res) => {
         let sumFormed = 0;
         let sumRecruited = 0;
         let SumAttributed = 0;
+        let StructuresCount = 0;
 
         // Sum up the numbers based on the insee code
         for (let key in data) {
@@ -27,6 +28,7 @@ export default async (req, res) => {
                 sumFormed += Number(item["Nb de conseillers formés"]);
                 sumRecruited += Number(item["Nb de conseillers recrutés"]);
                 SumAttributed += Number(item["Nb de conseillers attribués"]);
+                StructuresCount += 1;
             }
         }
 
@@ -34,7 +36,8 @@ export default async (req, res) => {
             "Nb de conseillers en formation": sumFormation,
             "Nb de conseillers formés": sumFormed,
             "Nb de conseillers recrutés": sumRecruited,
-            "Nb de conseillers attribués": SumAttributed
+            "Nb de conseillers attribués": SumAttributed,
+            "StructuresCount": StructuresCount
         });
     } catch (error) {
         return res.status(500).json({ error: 'An error occurred' });
