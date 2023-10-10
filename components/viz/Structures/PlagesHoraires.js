@@ -110,13 +110,13 @@ const PlagesHoraires = ({ code }) => {
               padding: '10px 20px',
               margin: '20px 0',
               color: '#fff',
-              background: isButtonHovered ? '#df7373' : '#13315c', 
+              background: isButtonHovered ? '#df7373' : '#69778c', 
               borderRadius: '5px',
               textDecoration: 'none',
               textAlign: 'center',
               fontWeight: 'bold',
               transition: 'background-color 0.3s',
-              fontSize: '24px' 
+              fontSize: '18px' 
             }} 
             onMouseEnter={() => setIsButtonHovered(true)} 
             onMouseLeave={() => setIsButtonHovered(false)} 

@@ -79,8 +79,15 @@ export default function Documentation() {
                 <blockquote className={styles.quote}>
                     "Les données peuvent provenir d'un diagnostic réalisé par une organisation tierce, ou bien grâce au suivi en continu par la collectivité."
                 </blockquote>
-
-                <h2 className={styles.thirdtitle}>Comment ajouter les données de votre collectivité ?</h2>
+                <a href="https://airtable.com/appr5LMgTUKIOKuXN/shrAxgoJxYlHP4qvy" target="_blank" rel="noopener noreferrer">
+                    <button className={styles.customButton}>
+                        ✚ Ajouter ou mettre à jour vos données
+                    </button>
+                </a>
+                <br></br>
+                <br></br>
+                <details>
+               <summary><b>Comment ajouter manuellement les données de votre collectivité ?</b></summary>
 
                 <div className={styles.hint}>
                     Les données sur l'équipement des structures sont contenues dans un fichier JSON, et (à ce jour) ajoutées ou mises à jour sur demande des collectivités.
@@ -146,6 +153,7 @@ export default function Documentation() {
                     </button>
                 </a>
                 </p>
+                </details>
             </div>
         </Layout>
     );
