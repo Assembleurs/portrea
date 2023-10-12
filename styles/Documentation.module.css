@@ -89,15 +89,24 @@
 }
 
 .link {
-    color: #296b9d;
+    color: #494949;
     text-decoration: none;
-    border-bottom: 1px #296b9d;
+    border-bottom: 1px #184263;
     font-family: 'Roboto', sans-serif;
+    background-color: #f6f6f6;
+    padding: 5px;
+    display: block;
+    border-radius: 5px;
+    width: fit-content;
+    transition: all 0.1s; 
+    margin-bottom: 10px;
 }
 
 .link:hover {
     text-decoration: underline;
-    color: #54a1db;
+    color: #5799cc;
+    transform: scale(1.01);
+    background-color: rgb(247, 247, 247);
 }
 
 .tableContainer {
