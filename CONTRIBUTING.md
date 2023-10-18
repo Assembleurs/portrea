@@ -4,6 +4,8 @@ Le site Portrea permet de réaliser un pré-diagnostic pour une commune et son E
 
 Pour chaque commune recherchée, une page est générée automatiquement, et présente des visualisations associées.
 
+# Documentation technique 
+
 ## 💡 Indice de fragilité numérique de la commune
 
 ## 📊 Chiffres clés
