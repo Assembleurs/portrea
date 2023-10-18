@@ -9,12 +9,22 @@ Pour chaque commune recherchée, une page est générée automatiquement, et pr�
 ## 💡 Indice de fragilité numérique de la commune
 
 <details>
-  <summary>Le composant correspondant</summary>
+  <summary>Où se trouve le composant ?</summary>
   
   [Lien vers le code](/components/viz/Scores/Ifn.js)
   
 </details>
 
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  Il s'agit uniquement d'un lien vers une URL standardisée du site https://www.fragilite-numerique.fr, comprenant les variables à exposer sur la page pour un code commune donné.
+
+  ### Le fichier à mettre à jour
+  Les données sont mise à jour par la Mednum.
+
+</details>
 
 ## 📊 Chiffres clés
 
