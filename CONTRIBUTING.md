@@ -7,7 +7,7 @@ Pour chaque commune recherchée, une page est générée automatiquement, et pr�
 Chaque composant est alimenté en données par un fichier (json, csv) et / ou une API qui filtre le résultat par code INSEE :
 
 ```bash
-API > 
+Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Visualisation
 ```
 
 # Documentation technique 
