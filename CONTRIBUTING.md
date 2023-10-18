@@ -8,6 +8,12 @@ Pour chaque commune recherchée, une page est générée automatiquement, et pr�
 
 ## 💡 Indice de fragilité numérique de la commune
 
+<details>
+  <summary>Le composant correspondant</summary>
+  [Lien vers le code](/components/viz/Scores/Ifn.js)
+</details>
+
+
 ## 📊 Chiffres clés
 
 ### Score de fragilité numérique
@@ -34,4 +40,7 @@ Pour chaque commune recherchée, une page est générée automatiquement, et pr�
 ### 👨‍💼Conseillers numériques
 ### 📧 Contacter les structures de la commune
 
+## Données EPCI
+### 🖥 Personnes en situation d'illectronisme
+### ⌨️ Accès à l'équipement
 
