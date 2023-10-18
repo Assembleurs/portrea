@@ -49,7 +49,8 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
 
   ### Le(s) fichier(s) à mettre à jour
 
-  #### [inseediplome.json](/data/iris/inseediplome.json)
+  [inseediplome.json](/data/iris/inseediplome.json)
+  
   Source : https://www.insee.fr/fr/statistiques/6543298
 
   ### API correspondante(s) dans le code
