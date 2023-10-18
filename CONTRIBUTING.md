@@ -46,13 +46,13 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
   <summary>Comment mettre à jour les données</summary>
   
   ### Origine des données
+  
+  Source : https://www.insee.fr/fr/statistiques/6543298
 
   ### Le(s) fichier(s) à mettre à jour
 
   [inseediplome.json](/data/iris/inseediplome.json)
   
-  Source : https://www.insee.fr/fr/statistiques/6543298
-
   ### API correspondante(s) dans le code
   
   [API comcode2pop](/pages/api/iris/comcode2pop.js)
