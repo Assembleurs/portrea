@@ -4,7 +4,7 @@ Le site Portrea permet de réaliser un pré-diagnostic pour une commune et son E
 
 Pour chaque commune recherchée, une page est générée automatiquement, et présente des visualisations associées.
 
-## Indice de fragilité numérique de la commune
+## 💡 Indice de fragilité numérique de la commune
 
 ## 📊 Chiffres clés
 
@@ -16,7 +16,7 @@ Pour chaque commune recherchée, une page est générée automatiquement, et pr�
 #### Bénéficiaires des minima sociaux
 #### Demandeurs d'emploi
 
-## Données socio-démographiques détaillées
+## 🏘 Données socio-démographiques détaillées
 ### 📊 Données démographiques et CSP
 ### 📄 Données sur les allocataires (CAF)
 ### 💼 Données sur l'emploi
