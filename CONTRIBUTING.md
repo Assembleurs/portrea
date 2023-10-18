@@ -10,7 +10,9 @@ Pour chaque commune recherchée, une page est générée automatiquement, et pr�
 
 <details>
   <summary>Le composant correspondant</summary>
+  
   [Lien vers le code](/components/viz/Scores/Ifn.js)
+  
 </details>
 
 
