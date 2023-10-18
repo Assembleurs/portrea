@@ -35,6 +35,29 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
 ## 📊 Chiffres clés
 
 ### Score de fragilité numérique
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Scores/FragiliteScore.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+
+  ### Le(s) fichier(s) à mettre à jour
+
+  #### [inseediplome.json](/data/iris/inseediplome.json)
+  Source : https://www.insee.fr/fr/statistiques/6543298
+
+  ### API correspondante(s) dans le code
+  
+  [API comcode2pop](/pages/api/iris/comcode2pop.js)
+  [API comcode2diplome](/pages/api/iris/comcode2diplome.js)
+
+</details>
 #### Personnes âgées de plus de 65 ans
 #### Personnes sans diplôme ou CEP
 
