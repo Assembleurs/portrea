@@ -58,6 +58,8 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
   [API comcode2pop](/pages/api/iris/comcode2pop.js)
   [API comcode2diplome](/pages/api/iris/comcode2diplome.js)
 
+---
+
 </details>
 
 #### Personnes âgées de plus de 65 ans
