@@ -4,13 +4,18 @@ Le site Portrea permet de réaliser un pré-diagnostic pour une commune et son E
 
 Pour chaque commune recherchée, une page est générée automatiquement, et présente des visualisations associées.
 
+Chaque composant est alimenté en données par un fichier (json, csv) et / ou une API qui filtre le résultat par code INSEE :
+
+```
+API > 
+```
+
 # Documentation technique 
 
 ## 💡 Indice de fragilité numérique de la commune
 
 <details>
   <summary>Où se trouve le composant ?</summary>
-
   
   [Lien vers le code](/components/viz/Scores/Ifn.js)
   
