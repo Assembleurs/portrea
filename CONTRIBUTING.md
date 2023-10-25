@@ -66,6 +66,7 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
 
 
 #### Personnes âgées de plus de 65 ans
+
 #### Personnes sans diplôme ou CEP
 
 ### Score d'exposition aux exigences numériques
@@ -98,6 +99,7 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
 ---
 
 </details>
+
 #### Bénéficiaires des minima sociaux
 #### Demandeurs d'emploi
 
