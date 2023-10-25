@@ -47,12 +47,14 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
   
   ### Origine des données
   
-  Source : https://www.insee.fr/fr/statistiques/6543298
+  Diplômes : https://www.insee.fr/fr/statistiques/6543298
+  Population : https://www.insee.fr/fr/statistiques/6543200
 
   ### Le(s) fichier(s) à mettre à jour
 
   [inseediplome.json](/data/iris/inseediplome.json)
-  
+  [inseepop.json](/data/iris/inseepop.json)
+
   ### API correspondante(s) dans le code
   
   [API comcode2pop](/pages/api/iris/comcode2pop.js)
@@ -66,6 +68,35 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
 #### Personnes sans diplôme ou CEP
 
 ### Score d'exposition aux exigences numériques
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Scores/ExpositionScore.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+  Allocataires : https://www.insee.fr/fr/statistiques/6543298](https://www.insee.fr/fr/statistiques/6679585
+  Emploi : https://www.insee.fr/fr/statistiques/6473526
+  
+  ### Le(s) fichier(s) à mettre à jour
+
+  [inseecaf.json](/data/iris/inseecaf.json)
+  [inseeemploi.json](/data/iris/inseeemploi.json)
+
+  ### API correspondante(s) dans le code
+  
+  [API comcode2caf](/pages/api/iris/comcode2caf.js)
+  [API comcode2emploi](/pages/api/iris/comcode2emploi.js)
+
+---
+
+</details>
 #### Bénéficiaires des minima sociaux
 #### Demandeurs d'emploi
 
