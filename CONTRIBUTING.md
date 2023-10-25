@@ -64,6 +64,7 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
 
 </details>
 
+
 #### Personnes âgées de plus de 65 ans
 #### Personnes sans diplôme ou CEP
 
