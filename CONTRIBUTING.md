@@ -105,9 +105,116 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
 
 ## 🏘 Données socio-démographiques détaillées
 ### 📊 Données démographiques et CSP
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Iris/MapPop.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+  Population : https://www.insee.fr/fr/statistiques/6543200
+  
+  ### Le(s) fichier(s) à mettre à jour
+
+  [inseepop.json](/data/iris/inseepop.json)
+
+  ### API correspondante(s) dans le code
+  
+  [API comcode2pop](/pages/api/iris/comcode2pop.js)
+
+---
+
+</details>
+
 ### 📄 Données sur les allocataires (CAF)
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Iris/MapCaf.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+  Allocataires : https://www.insee.fr/fr/statistiques/6543298](https://www.insee.fr/fr/statistiques/6679585
+  
+  ### Le(s) fichier(s) à mettre à jour
+
+  [inseecaf.json](/data/iris/inseecaf.json)
+
+  ### API correspondante(s) dans le code
+  
+  [API comcode2caf](/pages/api/iris/comcode2caf.js)
+
+---
+
+</details>
+
 ### 💼 Données sur l'emploi
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Iris/MapEmploi.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+  Emploi : https://www.insee.fr/fr/statistiques/6473526
+  
+  ### Le(s) fichier(s) à mettre à jour
+
+  [inseeemploi.json](/data/iris/inseeemploi.json)
+
+  ### API correspondante(s) dans le code
+  
+  [API comcode2emploi](/pages/api/iris/comcode2emploi.js)
+
+---
+
+</details>
+
 ### 👩‍🎓 Données sur les diplômes
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Iris/MapDiplome.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+  Diplômes : https://www.insee.fr/fr/statistiques/6543298
+  
+  ### Le(s) fichier(s) à mettre à jour
+
+  [inseediplome.json](/data/iris/inseediplome.json)
+
+  ### API correspondante(s) dans le code
+  
+  [API comcode2diplome](/pages/api/iris/comcode2diplome.js)
+
+---
+
+</details>
 
 ## 🇫🇷 Fréquentation des structures France Services
 ### 🗺 Origine des usagers France Services
