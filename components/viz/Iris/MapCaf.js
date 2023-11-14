@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'; 
-import Switch from "react-switch";
+import styles from '../../../styles/Dataviz.module.css'
 import chroma from 'chroma-js';
 
 const MapCaf = ({ code, id }) => {
@@ -112,13 +112,13 @@ const MapCaf = ({ code, id }) => {
         let popupContent;
         if (mode === 'absolute') {
           color = absoluteColorScale(value).hex();
-          popupContent = `${selectedVariable}: ${value}`;
+          popupContent = `${value}`;
         }
       
         if (mode === 'percentage' && percValue > 0) {
           const percentage = (value / percValue) * 100;
           color = percentageColorScale(percentage).hex();
-          popupContent = `${selectedVariable}: ${value} (${percentage.toFixed(2)}%)`;
+          popupContent = `${value} (${percentage.toFixed(2)}%)`;
         }
       
         const polygon = L.polygon(invertedCoordinates, { fillColor: color, color: 'black', weight: 0.5 }).addTo(map)
@@ -166,8 +166,11 @@ const MapCaf = ({ code, id }) => {
 
   return (
     <div id={id}>
-        <br></br>
-      <select value={selectedVariable} onChange={handleVariableChange}>
+        <select
+          value={selectedVariable}
+          onChange={handleVariableChange}
+          className={styles.customSelector}
+        >
         <option value="a">Nombre total d'allocataires</option>
         <option value="percou">Personnes couvertes</option>
         <option value="ai">Allocataires isolés sans enfant</option>
@@ -191,45 +194,38 @@ const MapCaf = ({ code, id }) => {
         <option value="arsas">Allocataires percevant le RSA socle</option>
       </select>
       <label htmlFor="mode-switch">
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ marginRight: 10 }}>Valeur Absolue</span>
-        <Switch 
-            onChange={handleModeChange} 
-            checked={mode === "percentage"} 
-            id="mode-switch"
-            onColor="#86d3ff"
-            onHandleColor="#2693e6"
-            handleDiameter={15}
-            uncheckedIcon={false}
-            checkedIcon={false}
-            boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-            activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-            height={15}
-            width={30}
-            className="react-switch"
-        />
-        <span style={{ marginLeft: 10 }}>Pourcentage</span>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ marginRight: 10 }}>Cacher les structures</span>
-        <Switch 
-          onChange={handleShowStructuresChange} 
-          checked={showStructures} 
-          id="show-structures-switch"
-          onColor="#86d3ff"
-          onHandleColor="#2693e6"
-          handleDiameter={15}
-          uncheckedIcon={false}
-          checkedIcon={false}
-          boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-          activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-          height={15}
-          width={30}
-          className="react-switch"
-        />
-        <span style={{ marginLeft: 10 }}>Afficher les structures</span>
-      </div>
-      </label>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <button
+              style={{
+                marginRight: '10px',
+                color: 'white',
+                backgroundColor: mode === 'absolute' ? '#d3d3d3' : '#252d80',
+                borderRadius: '10px',
+                paddingLeft: '10px',
+                paddingRight: '10px'
+              }}
+              onClick={() =>
+                setMode(mode === 'absolute' ? 'percentage' : 'absolute')
+              }
+            >
+              {mode === 'absolute' ? 'Afficher en pourcentage' : 'Afficher en valeur absolue'}
+            </button>
+            <button
+              style={{
+                color: 'white',
+                backgroundColor: showStructures ? '#d3d3d3' : '#252d80',
+                borderRadius: '10px',
+                paddingLeft: '10px',
+                paddingRight: '10px'
+              }}
+              onClick={() => setShowStructures(!showStructures)}
+            >
+              {showStructures
+                ? '🆇 Cacher les structures'
+                : 'Afficher les structures'}
+            </button>
+          </div>
+        </label>
       <br></br>
       <div id="map" style={{ height: '400px' }}></div>
     </div>
