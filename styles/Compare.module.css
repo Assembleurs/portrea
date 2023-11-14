@@ -8,7 +8,6 @@
     margin: auto;
     width: 100%;
     font-weight: 800;
-    margin-bottom: 1rem;
     font-family: 'Big Shoulders Display';
 }
 
@@ -21,7 +20,8 @@
     margin-right: auto;
     padding: 20px;
     box-sizing: border-box;
-    height: 400px
+    height: 400px;
+    min-height: calc(100vh - 100px); 
 }
 
 .docText{
@@ -30,7 +30,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
     margin-top: 0.5rem;
     background-color: #f9f9f9;
     padding: 2rem;
@@ -45,7 +45,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
+    margin-top: -1rem;
     background-color: #252d80;
     padding: 2rem;
     border-radius: 1rem;
@@ -103,6 +103,7 @@
     background-color: #fff; 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    margin-bottom: 2rem;
 }
 
 .tableRow {
@@ -175,5 +176,28 @@
     background-color: #edede9;
     padding: 5px;
     border-radius: 8px;
+  }
+  
+  .exportButton {
+    background-color: #f2f2f2;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin-top: 12rem;
+    margin-bottom: 1rem;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+  
+  .exportButton:hover {
+    background-color: #252d80;
+    color: #ffff;
   }
   

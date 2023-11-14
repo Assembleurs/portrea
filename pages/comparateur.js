@@ -130,6 +130,25 @@ function CommuneCafPage() {
     return 'dataCell' // Classe par défaut
   }
 
+  function exportToCSV(data) {
+    const headers = ['Indicateur', ...data.map((d) => d.nom)]
+    const rows = Object.keys(data[0]?.values || {}).map((key) => {
+      return [key, ...data.map((d) => d.values[key] ?? 'N/A')].join(',')
+    })
+
+    const csvContent = [headers.join(','), ...rows].join('\n')
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.setAttribute('href', url)
+    link.setAttribute('download', 'export.csv')
+    link.style.visibility = 'hidden'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <Layout>
       <div>
@@ -139,9 +158,11 @@ function CommuneCafPage() {
         </div>
         <div className={styles.docText}>
           Ce comparateur permet d'obtenir le nombre de personnes concernées par
-          un dispositif d'allocations. <br></br> <br></br>Les codes couleurs permettent de
-          positionner les villes entre-elle (proportion parmis les personnes
-          couvertes) : <br></br> <br></br> 🟢 La proportion la plus faible <br></br><br></br> 
+          un dispositif d'allocations. <br></br> <br></br>Les codes couleurs
+          permettent de positionner les villes entre-elle (proportion parmis les
+          personnes couvertes) : <br></br> <br></br> 🟢 La proportion la plus
+          faible <br></br>
+          <br></br>
           🔴 La proportion la plus haute
         </div>
         <CommuneSearch
@@ -204,10 +225,25 @@ function CommuneCafPage() {
                   )
                 )}
               </tbody>
+              <div>
+              </div>
             </table>
           )}
         </div>
       </div>
+      <button
+                  className={styles.exportButton}
+                  onClick={() =>
+                    exportToCSV(
+                      selectedCommunes.map((commune) => ({
+                        nom: commune.nom,
+                        values: communeData[commune.code]
+                      }))
+                    )
+                  }
+                >
+                 ⬇ Exporter le tableau
+                </button>
     </Layout>
   )
 }

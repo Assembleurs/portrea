@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import chroma from 'chroma-js';
-import Switch from "react-switch";
+import styles from '../../../styles/Dataviz.module.css'
 
 const MapDiplome = ({ code, id }) => {
   const mapRef = useRef(null);
@@ -111,13 +111,13 @@ const MapDiplome = ({ code, id }) => {
         let popupContent;
         if (mode === 'absolute') {
           color = absoluteColorScale(value).hex();
-          popupContent = `${selectedVariable}: ${value}`;
+          popupContent = `${value}`;
         }
       
         if (mode === 'percentage' && percValue > 0) {
           const percentage = (value / percValue) * 100;
           color = percentageColorScale(percentage).hex();
-          popupContent = `${selectedVariable}: ${value} (${percentage.toFixed(2)}%)`;
+          popupContent = `${value} (${percentage.toFixed(2)}%)`;
         }
       
         const polygon = L.polygon(invertedCoordinates, { fillColor: color, color: 'black', weight: 0.5 }).addTo(mapRef.current)
@@ -165,9 +165,12 @@ const handleShowStructuresChange = (checked) => {
 
   return (
     <div>
-    <br></br>
 <div style={{ zIndex: 1 }}>
-  <select value={selectedVariable} onChange={handleVariableChange}>
+<select
+          value={selectedVariable}
+          onChange={handleVariableChange}
+          className={styles.customSelector}
+        >
         <option value="p19_nscol15p">Nombre de personnes non scolarisées de 15 ans ou plus</option>
         <option value="p19_nscol15p_diplmin">Nombre de personnes non scolarisées de 15 ans ou plus titulaires d'aucun diplôme ou au plus un CEP</option>
         <option value="p19_nscol15p_bepc">Nombre de personnes non scolarisées de 15 ans ou plus titulaires d'un BEPC, brevet des collèges, DNB</option>
@@ -178,47 +181,38 @@ const handleShowStructuresChange = (checked) => {
         <option value="p19_nscol15p_sup5">Nombre de personnes non scolarisées de 15 ans ou plus titulaires d'un diplôme de niveau Bac + 5 ou plus</option>
       </select>
       <label htmlFor="mode-switch">
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ marginRight: 10 }}>Valeur Absolue</span>
-        <Switch 
-            onChange={handleModeChange} 
-            checked={mode === "percentage"} 
-            id="mode-switch"
-            onColor="#86d3ff"
-            onHandleColor="#2693e6"
-            handleDiameter={15}
-            uncheckedIcon={false}
-            checkedIcon={false}
-            boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-            activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-            height={15}
-            width={30}
-            className="react-switch"
-        />
-        <span style={{ marginLeft: 10 }}>Pourcentage</span>
-        </div>
-      </label>
-      <label htmlFor="show-structures-switch">
-  <div style={{ display: 'flex', alignItems: 'center' }}>
-    <span style={{ marginRight: 10 }}>Cacher les structures</span>
-    <Switch 
-      onChange={handleShowStructuresChange} 
-      checked={showStructures} 
-      id="show-structures-switch"
-      onColor="#86d3ff"
-      onHandleColor="#2693e6"
-      handleDiameter={15}
-      uncheckedIcon={false}
-      checkedIcon={false}
-      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-      height={15}
-      width={30}
-      className="react-switch"
-    />
-    <span style={{ marginLeft: 10 }}>Afficher les structures</span>
-  </div>
-</label>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <button
+              style={{
+                marginRight: '10px',
+                color: 'white',
+                backgroundColor: mode === 'absolute' ? '#d3d3d3' : '#252d80',
+                borderRadius: '10px',
+                paddingLeft: '10px',
+                paddingRight: '10px'
+              }}
+              onClick={() =>
+                setMode(mode === 'absolute' ? 'percentage' : 'absolute')
+              }
+            >
+              {mode === 'absolute' ? 'Afficher en pourcentage' : 'Afficher en valeur absolue'}
+            </button>
+            <button
+              style={{
+                color: 'white',
+                backgroundColor: showStructures ? '#d3d3d3' : '#252d80',
+                borderRadius: '10px',
+                paddingLeft: '10px',
+                paddingRight: '10px'
+              }}
+              onClick={() => setShowStructures(!showStructures)}
+            >
+              {showStructures
+                ? '🆇 Cacher les structures'
+                : 'Afficher les structures'}
+            </button>
+          </div>
+        </label>
       </div>
       <div style={{ height: '400px', marginTop: '20px' }}>
         <div id={id} style={{ position: 'relative', height: '100%' }}></div>
