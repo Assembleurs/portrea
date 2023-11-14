@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.pageTitle {
+    font-size: 60px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    width: 100%;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    font-family: 'Big Shoulders Display';
+}
+
+.container {
+    display: block;
+    justify-content: left;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 400px
+}
+
+.docText{
+    display: block;
+    width: 50%;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.searchContainer {
+    height: 280px;
+    display: block;
+    width: 50%;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: #252d80;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.searchInput {
+    padding: 10px;
+    font-size: 22px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: none;
+}
+
+.suggestionsList {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    color: #fff;
+    text-justify: center;
+}
+
+.suggestionItem {
+    padding: 2px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    width: fit-content;
+}
+
+.suggestionItem:hover {
+    background-color: rgb(255, 255, 255);
+    color: #252d80;
+}
+
+.removeIcon {
+    cursor: pointer;
+    margin-left: 10px;
+    user-select: none;
+}
+
+.compareTable {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #fff; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.tableRow {
+    background-color: #ffffff; 
+    color: #494949; 
+    border-bottom: 5px solid #ededed; 
+    font-size: 22px;
+    font-weight: '800';
+    font-family: 'Big Shoulders Display';
+}
+
+.tableRow:hover {
+    background-color: #f1f1f1; 
+}
+
+.tableCell {
+    padding: 8px; 
+    text-align: left; 
+    vertical-align: middle;
+    padding: 10px;
+    border-bottom: 1px solid #f3f3f3;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.dataCell {
+    background-color: #fff; 
+    color: #333; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.loadingCell {
+    color: #999; 
+    font-style: italic; 
+}
+
+.errorCell {
+    color: red; 
+    font-weight: bold; 
+}
+
+.indicatorCell {
+    border-bottom: 1px solid #f3f3f3; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color:#404040;
+    background-color: #f8f8f8;
+    padding: 1px;
+    border-radius: 8px;
+    width: 30%;
+}
+
+.highValue {
+    background-color: #fcb1a6;
+    color: #333;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  
+  .lowValue {
+    background-color: #dde5b6;
+    color: #333;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  
+  .dataCell {
+    padding: 8px;
+    background-color: #edede9;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  

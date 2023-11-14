@@ -9,6 +9,7 @@ import Link from 'next/link';
 export default function Layout({ children }) {
   const [isSearchHovered, setIsSearchHovered] = useState(false);
   const [isDocsHovered, setIsDocsHovered] = useState(false);
+  const [isCompareHovered, setIsCompareHovered] = useState(false);
 
   const searchLinkStyle = {
     textDecoration: isSearchHovered ? 'underline' : 'none',
@@ -16,6 +17,10 @@ export default function Layout({ children }) {
 
   const docsLinkStyle = {
     textDecoration: isDocsHovered ? 'underline' : 'none',
+  };
+
+  const compareLinkStyle = {
+    textDecoration: isCompareHovered ? 'underline' : 'none',
   };
 
   return (
@@ -45,6 +50,20 @@ export default function Layout({ children }) {
               as="style"
             >
               🔎 Rechercher un territoire
+            </a>
+          </Link>
+        </div>
+        <div style={{ fontSize: '2rem', fontWeight: '400' }}>
+          <Link href="/comparateur">
+            <a
+              style={compareLinkStyle}
+              onMouseEnter={() => setIsCompareHovered(true)}
+              onMouseLeave={() => setIsCompareHovered(false)}
+              rel="preload" 
+              href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;800&display=swap"           
+              as="style"
+            >
+              📊 Comparateur
             </a>
           </Link>
         </div>
