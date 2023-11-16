@@ -241,6 +241,8 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
   ### API correspondante(s) dans le code
   
   [API comcode2emploi](/pages/api/iris/comcode2emploi.js)
+
+</details>
   
 ### 📍 Destinations des usagers France Services
 
