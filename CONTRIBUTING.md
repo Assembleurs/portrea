@@ -232,19 +232,65 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
   
   ### Origine des données
   
-  Emploi : https://www.insee.fr/fr/statistiques/6473526
-  
+[France Service](https://extranet.france-services.gouv.fr/)  
+
+Une demande d'accès à l'outil de téléchargement a été réalisée, mais pour un prochaine mise à jour : créer un compte si nécessaire et renouveler la demande d'accès.
+
+Pour télécharger les données, cela a été fait mois par mois, département par département, **sur la période 1er juillet 2021 au 30 juin 2022.**
+
   ### Le(s) fichier(s) à mettre à jour
 
-  [inseeemploi.json](/data/iris/inseeemploi.json)
+Pour faciliter le traitement, l'ensemble des données a été séparé en 3 fichiers.
+
+- [fs1.json](/data/france-services/fs1.json)
+- [fs2.json](/data/france-services/fs2.json)
+- [fs3.json](/data/france-services/fs3.json)
+
 
   ### API correspondante(s) dans le code
-  
-  [API comcode2emploi](/pages/api/iris/comcode2emploi.js)
+
+Une API permet de lire les 3 fichiers.
+
+  [API franceservices](/pages/api/franceservices.js)
 
 </details>
   
 ### 📍 Destinations des usagers France Services
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/FranceService/DestinationFs.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+[France Service](https://extranet.france-services.gouv.fr/)  
+
+Une demande d'accès à l'outil de téléchargement a été réalisée, mais pour un prochaine mise à jour : créer un compte si nécessaire et renouveler la demande d'accès.
+
+Pour télécharger les données, cela a été fait mois par mois, département par département, **sur la période 1er juillet 2021 au 30 juin 2022.**
+
+  ### Le(s) fichier(s) à mettre à jour
+
+Pour faciliter le traitement, l'ensemble des données a été séparé en 3 fichiers.
+
+- [fs1.json](/data/france-services/fs1.json)
+- [fs2.json](/data/france-services/fs2.json)
+- [fs3.json](/data/france-services/fs3.json)
+
+
+  ### API correspondante(s) dans le code
+
+Une API permet de lire les 3 fichiers.
+
+  [API destinationusersfranceservices](/pages/api/destinationusersfranceservices.js)
+
+</details>
 
 ## 👩🏽‍💻 Données sur l'offre en médiation numérique
 ### 📍 Localisation des structures
