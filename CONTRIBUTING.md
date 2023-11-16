@@ -218,43 +218,12 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
 
 ## 🇫🇷 Fréquentation des structures France Services
 
-
-<details>
-  <summary>Où se trouve le composant ?</summary>
-  
-  [Lien vers le code](/components/viz/FranceService/MapDiplome.js)
-  
-</details>
-
-<details>
-  <summary>Comment mettre à jour les données</summary>
-  
-  ### Origine des données
-  
-  Diplômes : https://www.insee.fr/fr/statistiques/6543298
-  
-  ### Le(s) fichier(s) à mettre à jour
-
-  [inseediplome.json](/data/iris/inseediplome.json)
-
-  ### API correspondante(s) dans le code
-  
-  [API comcode2diplome](/pages/api/iris/comcode2diplome.js)
-
----
-
-</details>
-
 ### 🗺 Origine des usagers France Services
 
-</details>
-
-### 💼 Données sur l'emploi
-
 <details>
   <summary>Où se trouve le composant ?</summary>
   
-  [Lien vers le code](/components/viz/Iris/MapEmploi.js)
+  [Lien vers le code](/components/viz/FranceService/MapVizualisation.js)
   
 </details>
 
