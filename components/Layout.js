@@ -85,6 +85,16 @@ export default function Layout({ children }) {
       <main>
         {children}
       </main>
+      <footer style={{
+        marginTop :'2rem',
+        background: 'transparent',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '0px 0'
+      }}>
+        <img src="/images/ue1.png" alt="Logo Union Européenne FEDER" style={{ marginRight: '0px', height: '80px' }} />
+      </footer>
     </div>
   );
 };
