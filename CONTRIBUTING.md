@@ -232,7 +232,7 @@ Page commune = {code_insee} --> Requête API = {code_insee} & résultats --> Vis
   
   ### Origine des données
   
-[France Service](https://extranet.france-services.gouv.fr/)  
+[France Services](https://extranet.france-services.gouv.fr/)  
 
 Une demande d'accès à l'outil de téléchargement a été réalisée, mais pour un prochaine mise à jour : créer un compte si nécessaire et renouveler la demande d'accès.
 
@@ -269,7 +269,7 @@ Une API permet de lire les 3 fichiers.
   
   ### Origine des données
   
-[France Service](https://extranet.france-services.gouv.fr/)  
+[France Services](https://extranet.france-services.gouv.fr/)  
 
 Une demande d'accès à l'outil de téléchargement a été réalisée, mais pour un prochaine mise à jour : créer un compte si nécessaire et renouveler la demande d'accès.
 
