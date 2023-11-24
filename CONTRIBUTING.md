@@ -413,5 +413,48 @@ Une API permet de lire le fichier.
 
 ## Données EPCI
 ### 🖥 Personnes en situation d'illectronisme
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Epci/Illectronisme.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+[INSEE](https://www.insee.fr/fr/statistiques/4986976#documentation)  
+
+  ### Le(s) fichier(s) à mettre à jour
+
+[illectronisme-insee.json](/data/epci/illectronisme-insee.json)
+
+</details>
+
 ### ⌨️ Accès à l'équipement
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Epci/EquipementStructures.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+Les données sont fournies par les communes via [ce formulaire](https://airtable.com/appr5LMgTUKIOKuXN/shrAxgoJxYlHP4qvy)
+Et si éligibles / pertinentes, elles peuvent intégrer une visualisation existante, ou faire l'objet d'une création de nouvelle visualisation - si celle-ci est pertinente.
+
+  ### Le(s) fichier(s) à mettre à jour
+
+[illectronisme-insee.json](/data/epci/equipement-structures.json)
+
+</details>
+
 
