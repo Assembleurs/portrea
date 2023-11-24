@@ -294,9 +294,122 @@ Une API permet de lire les 3 fichiers.
 
 ## 👩🏽‍💻 Données sur l'offre en médiation numérique
 ### 📍 Localisation des structures
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Structures/StructuresCategories.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+[Data.gouv.fr](https://www.data.gouv.fr/fr/datasets/lieux-de-mediation-numerique-sur-le-territoire-national-fournis-par-data-inclusion-1/)  
+
+  ### Le(s) fichier(s) à mettre à jour
+
+[structures-inclusion.geojson](/data/structures/structures-inclusion.geojson)
+
+
+  ### API correspondante(s) dans le code
+
+Une API permet de lire le fichier.
+
+  [API structures-inclusion](/pages/api/structures/structures-inclusion.js)
+
+</details>
+
 ### 🕐 Plages horaires des structures
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Structures/PlagesHoraires.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+[Data.gouv.fr](https://www.data.gouv.fr/fr/datasets/lieux-de-mediation-numerique-sur-le-territoire-national-fournis-par-data-inclusion-1/)  
+
+  ### Le(s) fichier(s) à mettre à jour
+
+[structures-inclusion.geojson](/data/structures/structures-inclusion.geojson)
+
+
+  ### API correspondante(s) dans le code
+
+Une API permet de lire le fichier.
+
+  [API structures-inclusion](/pages/api/structures/structures-inclusion.js)
+
+</details>
+
 ### 👨‍💼Conseillers numériques
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/FranceServices/Cnum.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+[Conseillers numériques](https://metabase.conseiller-numerique.gouv.fr/public/dashboard/446208c4-cae2-4c0c-be19-44cb14ce7d06?en_date_du___=2023-07-25)
+
+Le lien se trouve au bas de la page.
+
+  ### Le(s) fichier(s) à mettre à jour
+
+[cnum.json](/data/france-services/cnum.json)
+
+
+  ### API correspondante(s) dans le code
+
+Une API permet de lire le fichier.
+
+  [API cnum](pages/api/cnum.js)
+
+</details>
+
 ### 📧 Contacter les structures de la commune
+
+<details>
+  <summary>Où se trouve le composant ?</summary>
+  
+  [Lien vers le code](/components/viz/Structures/CourrielBox.js)
+  
+</details>
+
+<details>
+  <summary>Comment mettre à jour les données</summary>
+  
+  ### Origine des données
+  
+[Data.gouv.fr](https://www.data.gouv.fr/fr/datasets/lieux-de-mediation-numerique-sur-le-territoire-national-fournis-par-data-inclusion-1/)  
+
+  ### Le(s) fichier(s) à mettre à jour
+
+[structures-inclusion.geojson](/data/structures/structures-inclusion.geojson)
+
+
+  ### API correspondante(s) dans le code
+
+Une API permet de lire le fichier.
+
+  [API courriel-commune](/pages/api/structures/courriel-commune.js)
+
+</details>
 
 ## Données EPCI
 ### 🖥 Personnes en situation d'illectronisme
