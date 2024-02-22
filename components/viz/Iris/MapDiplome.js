@@ -44,18 +44,21 @@ const MapDiplome = ({ code, id }) => {
       fetch('/api/iris/comcode2diplome?comcode=' + code)
         .then((res) => res.json())
         .then((data) => {
-          const adjustedData = {
-            ...data,
-            features: data.map(d => {
-              console.log('inseediplomeData', d.inseediplomeData);  
-              return {
-                ...d,
-                properties: d.inseediplomeData,
-              };
-            })
-          };
-          setData(adjustedData);
+          if(data && Array.isArray(data)) { // Ensure data is not undefined and is an array
+            const adjustedData = {
+              ...data,
+              features: data.map(d => {
+                console.log('inside diplomeData', d.inseediplomeData);  
+                return {
+                  ...d,
+                  properties: d.inseediplomeData,
+                };
+              })
+            };
+            setData(adjustedData);
+          }
         })
+        
         .catch((error) => {
           console.error('An error occurred while retrieving the data:', error);
         });
@@ -74,22 +77,22 @@ const MapDiplome = ({ code, id }) => {
         }
       });
 
-      const values = data.features.map(feature => feature.properties[selectedVariable]);
+      const values = data?.features?.map(feature => feature.properties?.[selectedVariable] ?? 0);
       const minValue = Math.min(...values);
       const maxValue = Math.max(...values);
 
       const absoluteColorScale = chroma.scale(['yellow', 'violet']).domain([minValue, maxValue]);
 
       const percentageValues = data.features.map(feature => {
-        const value = feature.properties[selectedVariable];
-        const percValue = feature.properties['p19_nscol15p'];
+        const value = feature.properties?.[selectedVariable] ?? 0; // If undefined, default to 0
+        const percValue = feature.properties?.['p19_nscol15p'] ?? 0; // If undefined, default to 0 to prevent division by 0
         if (percValue > 0) {
           return (value / percValue) * 100;
         } else {
           return 0;
         }
       });
-      const minPercentage = Math.min(...percentageValues);
+            const minPercentage = Math.min(...percentageValues);
       const maxPercentage = Math.max(...percentageValues);
       const percentageColorScale = chroma.scale(['yellow', 'violet']).domain([minPercentage, maxPercentage]);
 
@@ -104,9 +107,9 @@ const MapDiplome = ({ code, id }) => {
           return;
         }
       
-        const value = feature.properties[selectedVariable];
-        const percValue = feature.properties['p19_nscol15p'];
-      
+        const value = feature.properties?.[selectedVariable] ?? 0; // Safely access with default 0
+        const percValue = feature.properties?.['p19_nscol15p'] ?? 1; // Default to 1 to avoid division by 0
+            
         let color;
         let popupContent;
         if (mode === 'absolute') {
