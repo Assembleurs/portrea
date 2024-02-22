@@ -11,14 +11,14 @@ const Diplomes = ({ comcode }) => {
         .then((res) => res.json())
         .then((diplomeData) => {
           const p19_nscol15p_diplmin = diplomeData.reduce(
-            (total, item) => total + item.inseediplomeData.p19_nscol15p_diplmin, 
+            (total, item) => total + (item.inseediplomeData?.p19_nscol15p_diplmin ?? 0),
             0
           );
           const p19_nscol15p = diplomeData.reduce(
-            (total, item) => total + item.inseediplomeData.p19_nscol15p,
+            (total, item) => total + (item.inseediplomeData?.p19_nscol15p ?? 0),
             0
           );
-          const proportionValue = (p19_nscol15p_diplmin / p19_nscol15p) * 100;
+                    const proportionValue = (p19_nscol15p_diplmin / p19_nscol15p) * 100;
           const diff = proportionValue - 21.86;
           setScore(p19_nscol15p_diplmin);
           setDifference(diff.toFixed(2));

@@ -18,10 +18,10 @@ const FragiliteScore = ({ comcode }) => {
           0
         );
         const p19_nscol15p_diplmin = diplomeData.reduce(
-          (total, item) => total + item.inseediplomeData.p19_nscol15p_diplmin,
+          (total, item) => total + (item.inseediplomeData?.p19_nscol15p_diplmin ?? 0),
           0
         );
-        const c19_pop15p = popData.reduce(
+                const c19_pop15p = popData.reduce(
           (total, item) => total + item.inseepopData.c19_pop15p,
           0
         );
