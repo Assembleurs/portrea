@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
+  
   // Load the datasets
   const contourIrisData = JSON.parse(fs.readFileSync(path.join(process.cwd(), './data/iris/contour-iris.geojson')));
   const inseediplomeData = JSON.parse(fs.readFileSync(path.join(process.cwd(), './data/iris/inseediplome.json')));
@@ -17,12 +18,14 @@ export default function handler(req, res) {
     return acc;
   }, {});
 
-  // Index inseediplomeData by iris_code for easy lookup
   const inseediplomeDataByIrisCode = inseediplomeData.reduce((acc, data) => {
-    acc[data.iris_code] = data;
+    // Ensure iris_code is treated as a string, then check if it starts with '2' and prepend '0' if true
+    const irisCodeStr = String(data.iris_code); // Convert to string to ensure .startsWith works
+    const irisCode = irisCodeStr.startsWith('2') ? `0${irisCodeStr}` : irisCodeStr;
+    acc[irisCode] = data;
     return acc;
   }, {});
-
+  
   // Extract the comcode from the query
   const { comcode } = req.query;
 
@@ -39,7 +42,9 @@ export default function handler(req, res) {
   }
 
   const responseData = data.map(feature => {
-    let inseediplomeData = inseediplomeDataByIrisCode[feature.properties.iris_code];
+    // Adjust iris_code in feature properties if it starts with '2'
+    const adjustedIrisCode = feature.properties.iris_code.startsWith('2') ? `0${feature.properties.iris_code}` : feature.properties.iris_code;
+    let inseediplomeData = inseediplomeDataByIrisCode[adjustedIrisCode];
     if (inseediplomeData) {
       inseediplomeData = Object.entries(inseediplomeData).reduce((acc, [key, value]) => {
         if (typeof value === 'number') {
@@ -50,9 +55,8 @@ export default function handler(req, res) {
         return acc;
       }, {});
     }
-    return { ...feature, inseediplomeData };
+    return { ...feature, properties: {...feature.properties, iris_code: adjustedIrisCode}, inseediplomeData };
   });
-  
 
   res.status(200).json(responseData);
 }
