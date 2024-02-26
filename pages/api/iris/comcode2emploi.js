@@ -17,9 +17,12 @@ export default function handler(req, res) {
     return acc;
   }, {});
 
-  // Index inseecafData by iris_code for easy lookup
+  // Index inseeemploiData by iris_code for easy lookup
   const inseeemploiDataByIrisCode = inseeemploiData.reduce((acc, data) => {
-    acc[data.iris_code] = data;
+    // Ensure iris_code is treated as a string, then check if it starts with '2' and prepend '0' if true
+    const irisCodeStr = String(data.iris_code); // Convert to string to ensure .startsWith works
+    const irisCode = irisCodeStr.startsWith('2') ? `0${irisCodeStr}` : irisCodeStr;
+    acc[irisCode] = data;
     return acc;
   }, {});
 
@@ -39,7 +42,11 @@ export default function handler(req, res) {
   }
 
   const responseData = data.map(feature => {
-    let inseeemploiData = inseeemploiDataByIrisCode[feature.properties.iris_code];
+    // Adjust the iris_code here before looking it up
+    const irisCodeStr = String(feature.properties.iris_code); // Ensure iris_code is treated as a string
+    const adjustedIrisCode = irisCodeStr.startsWith('2') ? `0${irisCodeStr}` : irisCodeStr;
+    let inseeemploiData = inseeemploiDataByIrisCode[adjustedIrisCode];
+    
     if (inseeemploiData) {
       inseeemploiData = Object.entries(inseeemploiData).reduce((acc, [key, value]) => {
         if (typeof value === 'number') {
@@ -50,9 +57,9 @@ export default function handler(req, res) {
         return acc;
       }, {});
     }
-    return { ...feature, inseeemploiData };
+    // Ensure the adjusted iris_code is used in the final response
+    return { ...feature, properties: { ...feature.properties, iris_code: adjustedIrisCode }, inseeemploiData };
   });
-  
 
   res.status(200).json(responseData);
 }
